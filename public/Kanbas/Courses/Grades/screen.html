@@ -1,0 +1,168 @@
+<html>
+  <head> </head>
+  <body>
+    <table width="100%">
+      <tbody>
+        <tr valign="TOP">
+          <!-- Col 1: Kanbas Navigation -->
+          <td>
+            <ul>
+              <li>
+                <a href="/Kanbas/Account/Profile/screen.html"> Account</a>
+              </li>
+              <li>
+                <a href="/Kanbas/Dashboard/screen.html">Dashboard</a>
+              </li>
+              <li>
+                <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
+              </li>
+              <li>
+                <a href="/Kanbas/Calendar/index.html">Calendar</a>
+              </li>
+              <li><a href="/Kanbas/Inbox/index.html">Inbox</a></li>
+              <li>
+                <a href="">Commons</a>
+              </li>
+              <li>
+                <a href="">Help</a>
+              </li>
+            </ul>
+          </td>
+          <!-- Col 2: Course Navigation -->
+          <td>
+            <ul>
+              <li>
+                <a href="/Kanbas/Courses/Home/screen.html"> Home</a>
+              </li>
+              <li>
+                <a href="/Kanbas/Courses/Modules/screen.html"> Modules</a>
+              </li>
+              <li><a href="/Kanbas/Courses/Piazza/index.html"> Piazza</a></li>
+              <li><a href=""> Zoom Meetings</a></li>
+              <li>
+                <a href="/Kanbas/Courses/Assignments/screen.html">
+                  Assignments</a
+                >
+              </li>
+              <li><a href=""> Quizzes</a></li>
+              <li><a href="/Kanbas/Courses/Grades/screen.html"> Grades</a></li>
+              <li><a href=""> Pages</a></li>
+              <li><a href=""> People</a></li>
+              <li><a href=""> Files</a></li>
+              <li><a href=""> Rubrics</a></li>
+              <li><a href=""> Outcomes</a></li>
+              <li><a href=""> Syllabus</a></li>
+              <li>
+                <a href="/Kanbas/Courses/Settings/Details/screen.html">
+                  Settings</a
+                >
+              </li>
+            </ul>
+          </td>
+
+          <!-- Col 3: Grades -->
+          <td>
+            <!-- import / Export Buttons and Dropdowns -->
+            <table>
+              <tbody>
+                <!-- 2 Cols of Buttons and Dropdowns -->
+                <tr width="100%">
+                  <td width="50%">
+                    <select id="select-gradebook">
+                      <option value="Gradebook">Gradebook</option>
+                      <option value="Change Gradebook">Gradebook</option>
+                      <option value="Traditional Gradebook">Gradebook</option>
+                      <option value="Individual Gradebook">Gradebook</option>
+                    </select>
+                  </td>
+                  <td>
+                    <button>Shortcut</button>
+                    <button>Import</button>
+                    <select id="select-export">
+                      <option value="Export">Export</option>
+                    </select>
+                    <button>Configure</button>
+                  </td>
+                </tr>
+                <!-- two cols of text input fields -->
+                <tr>
+                  <td>
+                    <br />
+                    <h4>Student Names</h4>
+                    <input
+                      name="student-name"
+                      id="text-fields-student-name"
+                      placeholder="Search Students"
+                    />
+                  </td>
+                  <td>
+                    <br />
+                    <h4>Assignments Names</h4>
+                    <input
+                      name="assignment-name"
+                      id="text-fields-assignment-name"
+                      placeholder="Search Assignments"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- apply filter button -->
+            <button>Apply Filters</button>
+            <br /><br />
+
+            <!-- grades table -->
+            <table border="1" width="100%">
+              <thead>
+                <tr>
+                  <th>Student Name</th>
+                  <th>A1 <br />Out of 100</th>
+                  <th>A2 <br />Out of 100</th>
+                  <th>A3 <br />Out of 100</th>
+                  <th>A4 <br />Out of 100</th>
+                </tr>
+              </thead>
+              <tbody align="center">
+                <tr>
+                  <td>Alice</td>
+                  <td>98</td>
+                  <td>89</td>
+                  <td>87</td>
+                  <td>90</td>
+                </tr>
+                <tr>
+                  <td>Bob</td>
+                  <td>98</td>
+                  <!-- input field inline center -->
+                  <td>
+                    <input value="89" size="4" style="text-align: center" />
+                  </td>
+                  <td>87</td>
+                  <td>90</td>
+                </tr>
+                <tr>
+                  <td>Charlie</td>
+                  <td>98</td>
+                  <td>89</td>
+                  <td>
+                    <input value="87" size="4" style="text-align: center" />
+                  </td>
+                  <td>90</td>
+                </tr>
+                <tr>
+                  <td>Darth</td>
+                  <td>98</td>
+                  <td>89</td>
+                  <td>87</td>
+                  <td>90</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <!-- End of Col 3-->
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
