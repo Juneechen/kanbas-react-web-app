@@ -1,0 +1,38 @@
+.wd-kanbas-navigation {
+  background-color: black;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  width: 80px; /* width of the container */
+}
+/* li container */
+.wd-kanbas-navigation li {
+  padding: 10px; /* space between li and border */
+  margin-bottom: 10px; /* space between li */
+  font-size: 0.8em;
+  text-align: center;
+}
+/* selected li bg  */
+.wd-kanbas-navigation li.wd-active {
+  background-color: white;
+}
+/* selected li text  */
+.wd-kanbas-navigation li.wd-active a {
+  color: red;
+}
+/* anchor text  */
+.wd-kanbas-navigation a {
+  color: white;
+  text-decoration: none;
+}
+/* icons */
+.wd-kanbas-navigation a i {
+  color: red;
+  font-size: 2em; /* size of the icon */
+  margin-bottom: 5px; /* space between icon and text */
+}
+
+/* account icon */
+#wd-account-icon {
+  color: white;
+}

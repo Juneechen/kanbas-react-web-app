@@ -1,0 +1,10 @@
+.breadcrumb-item.active::before {
+  content: " > "; /* override separator; was '/' */
+}
+
+.breadcrumb-item a {
+  color: #c70000; /* override text color */
+}
+
+/* text-transform: uppercase; /* Convert text to uppercase */
+/* font-weight: bold; Set the font weight to bold */
