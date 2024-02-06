@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
-    <!--<link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css" /> -->
-    <link rel="stylesheet" href="/Kanbas/Courses/Grades/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Home/index.css" />
+    <!-- <link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css" /> -->
+    <!-- <link rel="stylesheet" href="/Kanbas/Courses/Grades/index.css" /> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
     <!-- Refactored using Bootstrap grid system -->
@@ -67,8 +69,120 @@
           </ul>
         </div>
 
-        <!-- Right: Course Nav + Component -->
+        <!-- Right: Content Page -->
         <div class="flex-fill container-fluid">
+          <!-- collapse toggle menu  -->
+          <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <!-- Toggle buttons for Kanbas and Course Navigation -->
+            <!-- Kanbas Nav Modal toggle -->
+            <button
+              class="btn btn-primary navbar-toggler"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#navModal"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <!-- Course Nav Collapse toggle-->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#courseNav"
+              aria-controls="courseNav"
+              aria-expanded="false"
+              aria-label="Toggle Course Navigation"
+            >
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </nav>
+          <!-- Kanbas Nav Modal-->
+          <div
+            class="modal fade"
+            id="navModal"
+            tabindex="-1"
+            aria-labelledby="navModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Content for the fullscreen window -->
+                  <ul class="wd-kanbas-nav-collapse">
+                    <li>
+                      <a href="/Kanbas/Account/Profile/screen.html">
+                        <i class="fa fa-user" id="wd-account-icon"></i
+                        >Account</a
+                      >
+                    </li>
+                    <li>
+                      <a href="/Kanbas/Dashboard/screen.html">
+                        <i class="fas fa-tachometer-alt"></i>Dashboard</a
+                      >
+                    </li>
+                    <li class="wd-kanbas-nav-collapse-active">
+                      <a href="/Kanbas/Courses/Home/screen.html"
+                        ><i class="fa fa-book"></i>Courses</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="far fa-calendar-alt"></i>Calendar</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-inbox"></i>Inbox</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="far fa-clock"></i>History</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-laptop"></i>Studio</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fas fa-sign-out-alt"></i>Commons</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-question-circle"></i>Help</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Course Nav Collapse -->
+          <div class="collapse" id="courseNav">
+            <ul class="wd-kanbas-nav-collapse card">
+              <li>
+                <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+              </li>
+              <li class="wd-kanbas-nav-collapse-active">
+                <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+              </li>
+              <li><a href="http://piazza.com">Piazza</a></li>
+              <li><a href="#">Zoom</a></li>
+              <li>
+                <a href="/Kanbas/Courses/Assignments/screen.html"
+                  >Assignments</a
+                >
+              </li>
+              <li><a href="#">Quizzes</a></li>
+              <li>
+                <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
+              </li>
+              <li><a href="#">People</a></li>
+            </ul>
+          </div>
+
+          <!-- end of collapse toggle menu  -->
           <!-- Top: Breadcrumb -->
           <nav class="mt-4 container-fluid" aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -85,10 +199,10 @@
 
           <hr />
 
-          <!-- Bottom 2 Cols -->
+          <!-- Bottom 2 Cols: Course Navigation + (Modules + Status) -->
           <div class="d-flex">
-            <!-- Col 1: Course Nav -->
-            <div class="d-none d-xl-block">
+            <!-- Col 1: Nav -->
+            <div class="d-none d-lg-block">
               <ul class="wd-navigation">
                 <li>
                   <a href="/Kanbas/Courses/Home/screen.html">Home</a>
@@ -111,68 +225,278 @@
               </ul>
             </div>
 
-            <!-- Col 2: Component Content -->
+            <!-- Col 2: Modules -->
             <div class="flex-fill container-fluid ms-4">
-              <!-- row 1: buttons -->
               <div class="d-flex">
-                <div>
-                  <!-- empty placeholder -->
-                </div>
-                <div class="flex-fill float-end">
-                  <span class="float-end"
-                    ><button class="btn btn-light text-muted me-2">
-                      <i class="fas fa-file-import me-2"></i>Import
-                    </button>
-                    <!-- Export dropdown button  -->
-                    <!-- <button class="btn btn-light me-2">
-                        <i class="fa fa-sign-out me-2"></i>Export
-                      </button> -->
-                    <select class="form-select btn btn-light text-muted me-2">
-                      <option>
-                        <i class="fas fa-file-export me-2"></i>Export
-                      </option>
-                      <option>Export Current Gradebook View</option>
-                      <option>Export Entire Gradebook</option>
-                    </select>
-                    <!-- End of Export dropdown button  -->
-                    <button class="btn btn-light me-2">
-                      <i class="fas fa-cog"></i></button
-                  ></span>
+                <!-- left: Modules -->
+                <div class="flex-grow-1 me-2">
+                  <!-- row 1: Buttons on the top of this column -->
+                  <div class="d-flex">
+                    <!-- placeholder -->
+                    <div class="flex-fill"></div>
+                    <!-- buttons -->
+                    <span class="float-end"
+                      ><button class="btn btn-light">Collapse All</button
+                      ><button class="btn btn-light">View Progress</button
+                      ><button class="btn btn-light">
+                        <div class="d-flex align-items-center">
+                          <i class="fa fa-check-circle text-success me-2"></i>
+                          <select class="form-select">
+                            <option>Publish All</option>
+                          </select>
+                        </div></button
+                      ><button class="btn btn-danger">+ Module</button
+                      ><button class="btn btn-light">
+                        <i class="fa fa-ellipsis-v"></i></button
+                    ></span>
+                  </div>
+                  <hr />
+
+                  <!-- module group -->
+                  <div class="flex-fill mt-4">
+                    <div class="card wd-modules">
+                      <div class="card-header">
+                        <i class="fa fa-ellipsis-v"></i> Week 1<span
+                          class="float-end"
+                          ><i class="fa fa-check-circle text-success"></i>
+                          <i class="fa fa-plus"></i>
+                          <i class="fa fa-ellipsis-v"></i>
+                        </span>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <!-- item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <span class="d-flex flex-fill align-items-center"
+                              >LEARNING OBJECTIVES</span
+                            >
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+
+                        <!-- item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <span class="d-flex flex-fill align-items-center"
+                              >READING</span
+                            >
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- end of module group -->
+
+                  <!-- module group -->
+                  <div class="flex-fill mt-4">
+                    <div class="card wd-modules">
+                      <div class="card-header">
+                        <i class="fa fa-ellipsis-v"></i> Week 2<span
+                          class="float-end"
+                          ><i class="fa fa-check-circle text-success"></i>
+                          <i class="fa fa-plus"></i>
+                          <i class="fa fa-ellipsis-v"></i>
+                        </span>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <!-- item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <span class="d-flex flex-fill align-items-center"
+                              >LEARNING OBJECTIVES</span
+                            >
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+
+                        <!-- item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <span class="d-flex flex-fill align-items-center"
+                              >READING</span
+                            >
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- end of module group -->
                 </div>
               </div>
-
-              <!-- row 2: dropdowns -->
-              <div class="row mt-2">
-                <div class="col font-weight-bold">
-                  <label>blah</label><br />
-                  <input class="form-control mt-2" placeholder="placeholder" />
-                </div>
-                <div class="col font-weight-bold">
-                  <label>blah</label><br />
-                  <input
-                    class="form-control mt-2"
-                    placeholder="placeholder"
-                  /><br />
-                </div>
-              </div>
-
-              <!-- row 3: filter button -->
-
-              <div class="row">
-                <div class="col">
-                  <button class="btn btn-light text-muted me-2">
-                    <i class="fa fa-filter me-2"></i>button
-                  </button>
-                </div>
-              </div>
-
-              <!-- Actual Content -->
-              <div class="flex-fill mt-4">Actual Content</div>
             </div>
+            <!-- End of Col 2: Modules -->
           </div>
-          <!-- End of Col 2: Component Content  -->
         </div>
-        <!-- End of Right: Course Nav + Component -->
       </div>
     </div>
   </body>

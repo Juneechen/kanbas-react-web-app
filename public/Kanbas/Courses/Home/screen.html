@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/Kanbas/Courses/Home/index.css" />
     <!-- <link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css" /> -->
     <!-- <link rel="stylesheet" href="/Kanbas/Courses/Grades/index.css" /> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
     <!-- Refactored using Bootstrap grid system -->
@@ -70,6 +71,182 @@
 
         <!-- Right: Content Page -->
         <div class="flex-fill container-fluid">
+          <!-- collapse toggle menu  -->
+          <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <!-- Toggle buttons for Kanbas and Course Navigation -->
+            <!-- Kanbas Nav Modal -->
+            <button
+              class="btn btn-primary navbar-toggler"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#navModal"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <!-- Course Nav Collapse -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#courseNav"
+              aria-controls="courseNav"
+              aria-expanded="false"
+              aria-label="Toggle Course Navigation"
+            >
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </nav>
+          <!-- Kanbas Navigation Modal-->
+          <div
+            class="modal fade"
+            id="navModal"
+            tabindex="-1"
+            aria-labelledby="navModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Content for the fullscreen window -->
+                  <ul class="wd-kanbas-nav-collapse">
+                    <li>
+                      <a href="/Kanbas/Account/Profile/screen.html">
+                        <i class="fa fa-user" id="wd-account-icon"></i
+                        >Account</a
+                      >
+                    </li>
+                    <li>
+                      <a href="/Kanbas/Dashboard/screen.html">
+                        <i class="fas fa-tachometer-alt"></i>Dashboard</a
+                      >
+                    </li>
+                    <li class="wd-kanbas-nav-collapse-active">
+                      <a href="/Kanbas/Courses/Home/screen.html"
+                        ><i class="fa fa-book"></i>Courses</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="far fa-calendar-alt"></i>Calendar</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-inbox"></i>Inbox</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="far fa-clock"></i>History</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-laptop"></i>Studio</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fas fa-sign-out-alt"></i>Commons</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-question-circle"></i>Help</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Course Navigation Collapse -->
+          <div class="collapse" id="courseNav">
+            <ul class="wd-kanbas-nav-collapse card">
+              <li class="wd-kanbas-nav-collapse-active">
+                <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+              </li>
+              <li>
+                <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+              </li>
+              <li><a href="http://piazza.com">Piazza</a></li>
+              <li><a href="#">Zoom</a></li>
+              <li>
+                <a href="/Kanbas/Courses/Assignments/screen.html"
+                  >Assignments</a
+                >
+              </li>
+              <li><a href="#">Quizzes</a></li>
+              <li>
+                <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
+              </li>
+              <li><a href="#">People</a></li>
+            </ul>
+          </div>
+
+          <!-- experiment:  -->
+
+          <div
+            class="modal fade"
+            id="navModal"
+            tabindex="-1"
+            aria-labelledby="navModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Content for the fullscreen window -->
+                  <ul class="wd-kanbas-nav-collapse">
+                    <li>
+                      <a href="/Kanbas/Account/Profile/screen.html">
+                        <i class="fa fa-user" id="wd-account-icon"></i
+                        >Account</a
+                      >
+                    </li>
+                    <li>
+                      <a href="/Kanbas/Dashboard/screen.html">
+                        <i class="fas fa-tachometer-alt"></i>Dashboard</a
+                      >
+                    </li>
+                    <li class="wd-kanbas-nav-collapse-active">
+                      <a href="/Kanbas/Courses/Home/screen.html"
+                        ><i class="fa fa-book"></i>Courses</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="far fa-calendar-alt"></i>Calendar</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-inbox"></i>Inbox</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="far fa-clock"></i>History</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-laptop"></i>Studio</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fas fa-sign-out-alt"></i>Commons</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-question-circle"></i>Help</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of experiment: modal -->
+          <!-- end of collapse toggle menu  -->
           <!-- Top: Breadcrumb -->
           <nav class="mt-4 container-fluid" aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -87,7 +264,7 @@
           <!-- Bottom 2 Cols: Course Navigation + (Modules + Status) -->
           <div class="d-flex">
             <!-- Col 1: Nav -->
-            <div class="d-none d-lg-block">
+            <div class="d-none d-md-block">
               <ul class="wd-navigation">
                 <li class="wd-active">
                   <a href="/Kanbas/Courses/Home/screen.html">Home</a>
@@ -112,9 +289,9 @@
 
             <!-- Col 2: (left: Modules + right: Status)  -->
             <div class="flex-fill container-fluid ms-4">
-              <div class="row">
+              <div class="d-flex">
                 <!-- left: Modules -->
-                <div class="col-9">
+                <div class="flex-grow-1 me-2">
                   <!-- row 1: Buttons on the top of this column -->
                   <div class="d-flex">
                     <!-- placeholder -->
@@ -379,7 +556,7 @@
                 </div>
 
                 <!-- right: Status -->
-                <div class="d-none d-xl-block col-3">
+                <div class="d-none d-xl-block ms-4">
                   <h5>Course Status</h5>
                   <hr />
                   <!-- buttons on top  -->
@@ -390,22 +567,41 @@
 
                     <button class="flex-fill btn btn-success">Published</button>
                   </div>
-                  <!--  links -->
-                  <button class="btn btn-light btn-block" href="">
-                    Import Existing Content
-                  </button>
-                  <button class="btn btn-light" href="">
-                    Import From Commons
-                  </button>
-                  <button class="btn btn-light" href="">
-                    Choose Home Page
-                  </button>
-                  <button class="btn btn-light" href="">
-                    New Announcement
-                  </button>
-                  <button class="btn btn-light" href="">New Analystics</button>
+                  <!-- links -->
+                  <div class="d-flex flex-column">
+                    <button
+                      class="btn btn-light flex-fill text-start"
+                      type="button"
+                    >
+                      Import Existing Content
+                    </button>
+                    <button
+                      class="btn btn-light flex-fill mt-2 text-start"
+                      type="button"
+                    >
+                      Import From Commons
+                    </button>
+                    <button
+                      class="btn btn-light flex-fill mt-2 text-start"
+                      type="button"
+                    >
+                      Choose Home Page
+                    </button>
+                    <button
+                      class="btn btn-light flex-fill mt-2 text-start"
+                      type="button"
+                    >
+                      New Announcement
+                    </button>
+                    <button
+                      class="btn btn-light flex-fill mt-2 text-start"
+                      type="button"
+                    >
+                      New Analytics
+                    </button>
+                  </div>
 
-                  <h5 class="mt-2">To Do</h5>
+                  <h5 class="mt-4">To Do</h5>
                   <hr />
                   <ul>
                     <li class="list-group-item"><a href="#">Task 1</a></li>

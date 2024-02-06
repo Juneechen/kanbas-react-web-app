@@ -34,5 +34,35 @@
 
 /* account icon */
 #wd-account-icon {
-  color: white;
+  color: rgb(170, 170, 170);
+}
+
+.wd-kanbas-nav-collapse {
+  text-decoration: none;
+  list-style: none;
+  color: #c70000;
+}
+
+.wd-kanbas-nav-collapse li {
+  padding: 8px; /* space between li and border */
+  margin-bottom: 2px; /* space between li */
+  margin-top: 2px; /* space between li */
+  /* font-size: 0.8em; */
+  text-align: left;
+}
+
+.wd-kanbas-nav-collapse li i {
+  margin-bottom: 4px; /* space between li */
+  margin-right: 10pt;
+  width: 16px;
+}
+
+.wd-kanbas-nav-collapse-active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a {
+  color: #c70000; /* override color of hyperlinks */
+  text-decoration: none; /* remove underline from hyperlinks */
 }

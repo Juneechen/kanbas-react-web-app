@@ -15,6 +15,7 @@
     <!-- <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" /> -->
     <link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Grades/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
     <!-- Refactored using Bootstrap grid system -->
@@ -69,6 +70,118 @@
 
         <!-- Right: Course Nav + Component -->
         <div class="flex-fill container-fluid">
+          <!-- collapse toggle menu  -->
+          <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <!-- Toggle buttons for Kanbas and Course Navigation -->
+            <!-- Kanbas Nav Modal toggle -->
+            <button
+              class="btn btn-primary navbar-toggler"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#navModal"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <!-- Course Nav Collapse toggle-->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#courseNav"
+              aria-controls="courseNav"
+              aria-expanded="false"
+              aria-label="Toggle Course Navigation"
+            >
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </nav>
+          <!-- Kanbas Nav Modal-->
+          <div
+            class="modal fade"
+            id="navModal"
+            tabindex="-1"
+            aria-labelledby="navModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-fullscreen">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Content for the fullscreen window -->
+                  <ul class="wd-kanbas-nav-collapse">
+                    <li>
+                      <a href="/Kanbas/Account/Profile/screen.html">
+                        <i class="fa fa-user" id="wd-account-icon"></i
+                        >Account</a
+                      >
+                    </li>
+                    <li>
+                      <a href="/Kanbas/Dashboard/screen.html">
+                        <i class="fas fa-tachometer-alt"></i>Dashboard</a
+                      >
+                    </li>
+                    <li class="wd-kanbas-nav-collapse-active">
+                      <a href="/Kanbas/Courses/Home/screen.html"
+                        ><i class="fa fa-book"></i>Courses</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="far fa-calendar-alt"></i>Calendar</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-inbox"></i>Inbox</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="far fa-clock"></i>History</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-laptop"></i>Studio</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fas fa-sign-out-alt"></i>Commons</a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-question-circle"></i>Help</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Course Nav Collapse -->
+          <div class="collapse" id="courseNav">
+            <ul class="wd-kanbas-nav-collapse card">
+              <li>
+                <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+              </li>
+              <li>
+                <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+              </li>
+              <li><a href="http://piazza.com">Piazza</a></li>
+              <li><a href="#">Zoom</a></li>
+              <li class="wd-kanbas-nav-collapse-active">
+                <a href="/Kanbas/Courses/Assignments/screen.html"
+                  >Assignments</a
+                >
+              </li>
+              <li><a href="#">Quizzes</a></li>
+              <li>
+                <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
+              </li>
+              <li><a href="#">People</a></li>
+            </ul>
+          </div>
+
+          <!-- end of collapse toggle menu  -->
           <!-- Top: Breadcrumb -->
           <nav class="flex-fill container-fluid mt-4" aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -93,7 +206,7 @@
           <!-- Bottom 2 Cols -->
           <div class="d-flex">
             <!-- Col 1: Course Nav -->
-            <div class="d-none d-xl-block">
+            <div class="d-none d-md-block">
               <ul class="wd-navigation">
                 <li>
                   <a href="/Kanbas/Courses/Home/screen.html">Home</a>
