@@ -1,125 +1,127 @@
 <html>
   <head></head>
   <body>
-    <table width="100%">
-      <tbody>
-        <!-- Buttons and Dropdowns -->
-        <tr>
-          <td><input placeholder="Search for Assignments" /></td>
-          <td>
-            <button type="button">+ Group</button>
-            <button type="button">+ Assignment</button>
-            <select>
-              <option value="Edit Assignment Dates">
-                Edit Assignment Dates
-              </option>
-            </select>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- horizontal rule -->
+    <!-- search bar and buttons on the top of this column -->
+    <div class="d-flex">
+      <div class="flex-fill">
+        <input class="form-control w-25" placeholder="Search for Assignments" />
+      </div>
+      <span class="float-end"
+        ><button class="btn btn-light me-2">+ Group</button
+        ><button class="btn btn-danger">+ Assignment</button></span
+      >
+    </div>
     <hr />
 
-    <!-- Assignments -->
-    <h3>
-      Assignments 40% of Total
-      <select>
-        <option value="Edit">Edit</option>
-        <option value="Speed Grader">Speed Grader</option>
-        <option value="Duplicate">Duplicate</option>
-        <option value="Delete">Delete</option>
-        <option value="Move to..">Move to..</option>
-        <option value="Send to..">Send to..</option>
-        <option value="Copy to..">Copy to..</option>
-        <option value="Share to Commons">Share to Commons</option>
-      </select>
-    </h3>
-    <ul>
-      <li>
-        <a href="/Kanbas/Courses/Assignments/Edit/screen.html"
-          >A1 - ENV + HTML</a
-        ><br />
-        <a href="./modules.html">Multiple modules</a> | Due date: 2024-01-26
-        23:59:59 | 100pts
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Assignments/Edit/screen.html">A2 - CSS</a
-        ><br />
-        <a href="./modules.html">Multiple modules</a> | Not available yet
-      </li>
-    </ul>
+    <!-- list of assignments -->
+    <div class="card wd-modules">
+      <div class="card-header">
+        <i class="fa fa-ellipsis-v"></i> Assignment<span class="float-end">
+          <span class="rounded-pill px-3 py-1"> 40% of Total </span>
+          <i class="fa fa-plus"></i>
+          <i class="fa fa-ellipsis-v"></i>
+        </span>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="d-flex">
+            <i class="fa fa-ellipsis-v"></i>
+            <i class="fa fa-book"></i>
+            <div class="flex-fill">
+              <a
+                href="/Kanbas/Courses/Assignments/Edit/screen.html?assignment=A2"
+                >A1 SETUP</a
+              >
+              <div class="text-muted small">
+                Week x - Content - Week Starting on Monday mm/dd/yyyy | Due mm
+                dd, yyyy at 11:59 pm | 100 pts
+              </div>
+            </div>
 
-    <!-- Quizzes -->
-    <h3>
-      Quizzes 10% of Total
-      <select>
-        <option value="Edit">Edit</option>
-        <option value="Speed Grader">Speed Grader</option>
-        <option value="Duplicate">Duplicate</option>
-        <option value="Delete">Delete</option>
-        <option value="Move to..">Move to..</option>
-        <option value="Send to..">Send to..</option>
-        <option value="Copy to..">Copy to..</option>
-        <option value="Share to Commons">Share to Commons</option>
-      </select>
-    </h3>
-    <ul>
-      <li>
-        <a href="/Kanbas/Courses/Quizzes/screen.html">Q1 - HTML</a><br />
-        <a href="#">Multiple modules</a> | Not available yet
-      </li>
-      <li>
-        <a href="/Kanbas/Courses/Quizzes/screen.html">Q2 - CSS</a><br />
-        <a href="#">Multiple modules</a> | Not available yet
-      </li>
-    </ul>
+            <span class="float-end">
+              <i class="fa fa-check-circle text-success"></i>
+              <i class="fa fa-ellipsis-v"></i>
+            </span>
+          </div>
+        </li>
+        <!-- an item in the nested list  -->
+        <li class="list-group-item">
+          <div class="d-flex">
+            <i class="fa fa-ellipsis-v"></i>
+            <i class="fa fa-book"></i>
+            <div class="flex-fill">
+              <a
+                href="/Kanbas/Courses/Assignments/Edit/screen.html?assignment=A2"
+                >A2 HTML</a
+              >
+              <div class="text-muted small">
+                Week x - Content - Week Starting on Monday mm/dd/yyyy | Due mm
+                dd, yyyy at 11:59 pm | 100 pts
+              </div>
+            </div>
 
-    <!-- Exams -->
-    <h3>
-      Exams 20% of Total
-      <select>
-        <option value="Edit">Edit</option>
-        <option value="Speed Grader">Speed Grader</option>
-        <option value="Duplicate">Duplicate</option>
-        <option value="Delete">Delete</option>
-        <option value="Move to..">Move to..</option>
-        <option value="Send to..">Send to..</option>
-        <option value="Copy to..">Copy to..</option>
-        <option value="Share to Commons">Share to Commons</option>
-      </select>
-    </h3>
-    <ul>
-      <li>
-        <a href="#"> Midtern</a><br />
-        <a href="#">Multiple modules</a> | Not available yet
-      </li>
-      <li>
-        <a href="#">Final</a><br />
-        <a href="#">Multiple modules</a> | Not available yet
-      </li>
-    </ul>
+            <span class="float-end">
+              <i class="fa fa-check-circle text-success"></i>
+              <i class="fa fa-ellipsis-v"></i>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- end of assignments -->
 
-    <!-- Project -->
-    <h3>
-      Project 30% of Total
-      <select>
-        <option value="Edit">Edit</option>
-        <option value="Speed Grader">Speed Grader</option>
-        <option value="Duplicate">Duplicate</option>
-        <option value="Delete">Delete</option>
-        <option value="Move to..">Move to..</option>
-        <option value="Send to..">Send to..</option>
-        <option value="Copy to..">Copy to..</option>
-        <option value="Share to Commons">Share to Commons</option>
-      </select>
-    </h3>
-    <ul>
-      <li>
-        <a href="#"> Project</a><br />
-        <a href="#">Multiple modules</a> | Not available yet
-      </li>
-    </ul>
+    <!-- list of Quizes -->
+    <div class="card wd-modules">
+      <div class="card-header">
+        <i class="fa fa-ellipsis-v"></i> Quizes<span class="float-end">
+          <span class="rounded-pill px-3 py-1"> 20% of Total </span>
+          <i class="fa fa-plus"></i>
+          <i class="fa fa-ellipsis-v"></i>
+        </span>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="d-flex">
+            <i class="fa fa-ellipsis-v"></i>
+            <i class="fa fa-book"></i>
+            <div class="flex-fill">
+              <a href="/Kanbas/Courses/Assignments/Edit/screen.html?quiz=Q1"
+                >Q1</a
+              >
+              <div class="text-muted small">
+                Week x - Content - Week Starting on Monday mm/dd/yyyy | Due mm
+                dd, yyyy at 11:59 pm | 100 pts
+              </div>
+            </div>
+
+            <span class="float-end">
+              <i class="fa fa-check-circle text-success"></i>
+              <i class="fa fa-ellipsis-v"></i>
+            </span>
+          </div>
+        </li>
+        <!-- an item in the nested list  -->
+        <li class="list-group-item">
+          <div class="d-flex">
+            <i class="fa fa-ellipsis-v"></i>
+            <i class="fa fa-book"></i>
+            <div class="flex-fill">
+              <a href="/Kanbas/Courses/Assignments/Edit/screen.html?quiz=Q2"
+                >Q2</a
+              >
+              <div class="text-muted small">
+                Week x - Content - Week Starting on Monday mm/dd/yyyy | Due mm
+                dd, yyyy at 11:59 pm | 100 pts
+              </div>
+            </div>
+
+            <span class="float-end">
+              <i class="fa fa-check-circle text-success"></i>
+              <i class="fa fa-ellipsis-v"></i>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>
