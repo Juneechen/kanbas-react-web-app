@@ -1,0 +1,37 @@
+/* Custom CSS for table styling*/
+
+/* not working somehow */
+
+.wd-grade-table thead tr {
+  background-color: #f8f9fa; /* Light grey background for thead */
+}
+
+.wd-grade-table tbody tr:nth-child(odd) {
+  background-color: #ffffff; /* White background for odd rows */
+}
+
+.wd-grade-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa; /* Light grey background for even rows */
+}
+
+.wd-grade-table tbody tr:hover {
+  background-color: #e2e6ea; /* Hover background color */
+}
+
+.wd-grade-table tbody tr td[value="100"] {
+  background-color: #add8e6 !important; /* Light blue for cells with value 100 */
+}
+
+.wd-grade-table tbody tr th {
+  font-weight: normal;
+  color: #c70000;
+}
+
+/* align center  */
+.wd-grade-table thead tr th,
+.wd-grade-table thead tr td,
+.wd-grade-table tbody tr td,
+.wd-grade-table tbody tr td input {
+  text-align: center;
+  vertical-align: middle;
+}

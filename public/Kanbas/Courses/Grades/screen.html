@@ -1,194 +1,260 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="/Kanbas/styles.css" />
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Grades/index.css" />
   </head>
   <body>
-    <table>
-      <tbody>
-        <tr valign="TOP">
-          <!-- Col 1: Kanbas Navigation -->
-          <td>
-            <ul class="wd-kanbas-navigation">
-              <li><a href="http://northeastern.edu">N</a></li>
-              <li>
-                <a href="/Kanbas/Account/Profile/screen.html">
-                  <i class="fa fa-user" id="wd-account-icon"></i>
-                  Account</a
-                >
-              </li>
-              <li>
-                <a href="/Kanbas/Dashboard/screen.html">
-                  <i class="fa fa-tachometer"></i> Dashboard</a
-                >
-              </li>
-              <li class="wd-active">
+    <!-- Refactored using Bootstrap grid system -->
+    <div>
+      <div class="d-flex">
+        <!-- Left: Kanbas Navigation -->
+        <div class="d-none d-md-block">
+          <ul class="wd-kanbas-navigation">
+            <li><a href="http://northeastern.edu">N</a></li>
+            <li>
+              <a href="/Kanbas/Account/Profile/screen.html">
+                <i class="fa fa-user" id="wd-account-icon"></i>
+                Account</a
+              >
+            </li>
+            <li>
+              <a href="/Kanbas/Dashboard/screen.html">
+                <i class="fas fa-tachometer-alt"></i> Dashboard</a
+              >
+            </li>
+            <li class="wd-active">
+              <a href="/Kanbas/Courses/Home/screen.html"
+                ><i class="fa fa-book"></i>Courses</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="far fa-calendar-alt"></i> Calendar</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-inbox"></i><br />
+                Inbox</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="far fa-clock"></i>History</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-laptop"></i> Studio</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-sign-out-alt"></i> Commons</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-question-circle"></i><br />
+                Help</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Assignment Page -->
+        <div class="flex-fill container-fluid">
+          <!-- Top: Breadcrumb -->
+          <nav class="mt-4 container-fluid" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
                 <a href="/Kanbas/Courses/Home/screen.html"
-                  ><i class="fa fa-book"></i>Courses</a
+                  >CS5610.11744.202310</a
                 >
               </li>
-              <li>
-                <a href="#"><i class="fa fa-calendar"></i> Calendar</a>
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa fa-inbox"></i><br />
-                  Inbox</a
-                >
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-clock-o"></i>History</a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-laptop"></i> Studio</a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-sign-out"></i> Commons</a>
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa fa-question-circle"></i><br />
-                  Help</a
-                >
-              </li>
-            </ul>
-          </td>
-          <!-- Col 2: Course Navigation -->
-          <td>
-            <ul class="wd-navigation">
-              <li>
-                <a href="/Kanbas/Courses/Home/screen.html">Home</a>
-              </li>
-              <li>
-                <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
-              </li>
-              <li><a href="http://piazza.com">Piazza</a></li>
-              <li><a href="#">Zoom</a></li>
-              <li>
-                <a href="/Kanbas/Courses/Assignments/screen.html"
-                  >Assignments</a
-                >
-              </li>
-              <li><a href="#">Quizzes</a></li>
-              <li class="wd-active">
-                <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
-              </li>
-              <li><a href="#">People</a></li>
-              <!-- <li>
-                <a href="/Kanbas/Courses/Settings/Details/screen.html"> Settings</a>
-              </li> -->
-            </ul>
-          </td>
+              <li class="breadcrumb-item active" aria-current="page">Grades</li>
+            </ol>
+          </nav>
 
-          <!-- Col 3: Grades -->
-          <td>
-            <!-- import / Export Buttons and Dropdowns -->
-            <table>
-              <tbody>
-                <!-- 2 Cols of Buttons and Dropdowns -->
-                <tr width="100%">
-                  <td width="50%">
-                    <select id="select-gradebook">
-                      <option value="Gradebook">Gradebook</option>
-                      <option value="Change Gradebook">Change Gradebook</option>
-                      <option value="Traditional Gradebook">
-                        Traditional Gradebook
-                      </option>
-                      <option value="Individual Gradebook">
-                        Individual Gradebook
-                      </option>
-                    </select>
-                  </td>
-                  <td>
-                    <button>Shortcut</button>
-                    <button>Import</button>
-                    <select id="select-export">
-                      <option value="Export">Export</option>
-                    </select>
-                    <button>Configure</button>
-                  </td>
-                </tr>
-                <!-- two cols of text input fields -->
-                <tr>
-                  <td>
-                    <br />
-                    <h4>Student Names</h4>
-                    <input
-                      name="student-name"
-                      id="text-fields-student-name"
-                      placeholder="Search Students"
-                    />
-                  </td>
-                  <td>
-                    <br />
-                    <h4>Assignments Names</h4>
-                    <input
-                      name="assignment-name"
-                      id="text-fields-assignment-name"
-                      placeholder="Search Assignments"
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <hr />
 
-            <!-- apply filter button -->
-            <button>Apply Filters</button>
-            <br /><br />
+          <!-- Bottom 2 Cols: Course Navigation + Grade Edit -->
+          <div class="d-flex">
+            <!-- Col 1: Nav -->
+            <div class="d-none d-xl-block">
+              <ul class="wd-navigation">
+                <li>
+                  <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                </li>
+                <li>
+                  <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                </li>
+                <li><a href="http://piazza.com">Piazza</a></li>
+                <li><a href="#">Zoom</a></li>
+                <li>
+                  <a href="/Kanbas/Courses/Assignments/screen.html"
+                    >Assignments</a
+                  >
+                </li>
+                <li><a href="#">Quizzes</a></li>
+                <li class="wd-active">
+                  <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
+                </li>
+                <li><a href="#">People</a></li>
+              </ul>
+            </div>
 
-            <!-- grades table -->
-            <table border="1" width="100%">
-              <thead>
-                <tr>
-                  <th>Student Name</th>
-                  <th>A1 <br />Out of 100</th>
-                  <th>A2 <br />Out of 100</th>
-                  <th>A3 <br />Out of 100</th>
-                  <th>A4 <br />Out of 100</th>
-                </tr>
-              </thead>
-              <tbody align="center">
-                <tr>
-                  <td>Alice</td>
-                  <td>98</td>
-                  <td>89</td>
-                  <td>87</td>
-                  <td>90</td>
-                </tr>
-                <tr>
-                  <td>Bob</td>
-                  <td>98</td>
-                  <!-- input field inline center -->
-                  <td>
-                    <input value="89" size="4" style="text-align: center" />
-                  </td>
-                  <td>87</td>
-                  <td>90</td>
-                </tr>
-                <tr>
-                  <td>Charlie</td>
-                  <td>98</td>
-                  <td>89</td>
-                  <td>
-                    <input value="87" size="4" style="text-align: center" />
-                  </td>
-                  <td>90</td>
-                </tr>
-                <tr>
-                  <td>Darth</td>
-                  <td>98</td>
-                  <td>89</td>
-                  <td>87</td>
-                  <td>90</td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-          <!-- End of Col 3-->
-        </tr>
-      </tbody>
-    </table>
+            <!-- Col 2: Grades -->
+            <div class="flex-fill container-fluid ms-4">
+              <!-- row 1: Buttons on the top of this column -->
+              <div class="d-flex">
+                <!-- placeholder -->
+                <div class="flex-fill"></div>
+                <!-- buttons -->
+                <span class="float-end"
+                  ><button class="btn btn-light me-2">
+                    <i class="fas fa-file-import me-2"></i>Import</button
+                  ><button class="btn btn-light me-2">
+                    <div class="d-flex align-items-center">
+                      <i class="fas fa-file-export me-2"></i>
+                      <select class="form-select">
+                        <option>Export</option>
+                      </select>
+                    </div></button
+                  ><button class="btn btn-ligh me-2">
+                    <i class="fas fa-cog"></i></button
+                ></span>
+              </div>
+
+              <!-- row 2: dropdowns -->
+              <div class="row mt-2">
+                <div class="col font-weight-bold">
+                  <label>Student Names</label><br />
+                  <input
+                    class="form-control mt-2"
+                    placeholder="Search Students"
+                  />
+                </div>
+                <div class="col font-weight-bold">
+                  <label>Assignment Names</label><br />
+                  <input
+                    class="form-control mt-2"
+                    placeholder="Search Assignments"
+                  /><br />
+                </div>
+              </div>
+
+              <!-- row 3: filter button -->
+
+              <div class="row">
+                <div class="col">
+                  <button class="btn btn-light text-muted me-2">
+                    <i class="fa fa-filter me-2"></i>Apply Filters
+                  </button>
+                </div>
+              </div>
+
+              <!-- Grades table -->
+              <div class="flex-fill mt-4">
+                <table
+                  class="table table-bordered table-hover table-striped wd-grade-table"
+                >
+                  <thead class="thead-light">
+                    <tr>
+                      <th rowspan="2" style="text-align: left">Student Name</th>
+                      <th>A1</th>
+                      <th>A2</th>
+                      <th>A3</th>
+                      <th>A4</th>
+                    </tr>
+                    <tr>
+                      <td>Out of 100</td>
+                      <td>Out of 100</td>
+                      <td>Out of 100</td>
+                      <td>Out of 100</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Alice Wonderland</th>
+                      <td>100</td>
+                      <td>88</td>
+                      <td>
+                        <input
+                          class="form-control"
+                          value="95"
+                          type="number"
+                          max="100"
+                          min="0"
+                        />
+                      </td>
+                      <td>100</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Charlie Brown</th>
+                      <td>100</td>
+                      <td>
+                        <input
+                          class="form-control"
+                          value="100"
+                          type="number"
+                          max="100"
+                          min="0"
+                        />
+                      </td>
+                      <td>100</td>
+                      <td>
+                        <input
+                          class="form-control"
+                          value="75"
+                          type="number"
+                          max="100"
+                          min="0"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Darth</th>
+                      <td>85</td>
+
+                      <td>90</td>
+                      <td>80</td>
+                      <td>100</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Bob</th>
+                      <td>100</td>
+                      <td>
+                        <input
+                          class="form-control"
+                          value="100"
+                          type="number"
+                          max="100"
+                          min="0"
+                        />
+                      </td>
+                      <td>100</td>
+                      <td>
+                        <input
+                          class="form-control"
+                          value="100"
+                          type="number"
+                          max="100"
+                          min="0"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- end of grades -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

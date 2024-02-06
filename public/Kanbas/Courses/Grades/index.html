@@ -1,99 +1,155 @@
 <html>
   <head></head>
   <body>
-    <table>
-      <tbody>
-        <!-- 2 Cols of Buttons and Dropdowns -->
-        <tr width="100%">
-          <td width="50%">
-            <select id="select-gradebook">
-              <option value="Gradebook">Gradebook</option>
-              <option value="Change Gradebook">Change Gradebook</option>
-              <option value="Traditional Gradebook">
-                Traditional Gradebook
-              </option>
-              <option value="Individual Gradebook">Individual Gradebook</option>
+    <!-- row 1: Buttons on the top of this column -->
+    <div class="d-flex">
+      <!-- buttons group -->
+      <div class="flex-fill">
+        <div class="d-flex float-end">
+          <div>
+            <button class="btn btn-light text-muted me-2">
+              <i class="fas fa-file-import me-2"></i>Import
+            </button>
+          </div>
+          <!-- Export dropdown button  -->
+          <!-- <button class="btn btn-light me-2">
+                <i class="fa fa-sign-out me-2"></i>Export
+              </button> -->
+          <div>
+            <select class="form-select btn btn-light text-muted me-2">
+              <option><i class="fas fa-file-export me-2"></i>Export</option>
+              <option>Export Current Gradebook View</option>
+              <option>Export Entire Gradebook</option>
             </select>
-          </td>
-          <td>
-            <button>Shortcut</button>
-            <button>Import</button>
-            <select id="select-export">
-              <option value="Export">Export</option>
-            </select>
-            <button>Configure</button>
-          </td>
-        </tr>
-        <!-- two cols of text input fields -->
-        <tr>
-          <td>
-            <br />
-            <h4>Student Names</h4>
-            <input
-              name="student-name"
-              id="text-fields-student-name"
-              placeholder="Search Students"
-            />
-          </td>
-          <td>
-            <br />
-            <h4>Assignments Names</h4>
-            <input
-              name="assignment-name"
-              id="text-fields-assignment-name"
-              placeholder="Search Assignments"
-            />
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </div>
+          <div>
+            <!-- End of Export dropdown button  -->
+            <button class="btn btn-light me-2">
+              <i class="fas fa-cog"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- apply filter button -->
-    <button>Apply Filters</button>
-    <br /><br />
+    <!-- row 2: dropdowns -->
+    <div class="row mt-2">
+      <div class="col font-weight-bold">
+        <label>Student Names</label><br />
+        <input class="form-control mt-2" placeholder="Search Students" />
+      </div>
+      <div class="col font-weight-bold">
+        <label>Assignment Names</label><br />
+        <input
+          class="form-control mt-2"
+          placeholder="Search Assignments"
+        /><br />
+      </div>
+    </div>
 
-    <!-- grades table -->
-    <table border="1" width="100%">
-      <thead>
-        <tr>
-          <th>Student Name</th>
-          <th>A1 <br />Out of 100</th>
-          <th>A2 <br />Out of 100</th>
-          <th>A3 <br />Out of 100</th>
-          <th>A4 <br />Out of 100</th>
-        </tr>
-      </thead>
-      <tbody align="center">
-        <tr>
-          <td>Alice</td>
-          <td>98</td>
-          <td>89</td>
-          <td>87</td>
-          <td>90</td>
-        </tr>
-        <tr>
-          <td>Bob</td>
-          <td>98</td>
-          <!-- input field inline center -->
-          <td><input value="89" size="4" style="text-align: center" /></td>
-          <td>87</td>
-          <td>90</td>
-        </tr>
-        <tr>
-          <td>Charlie</td>
-          <td>98</td>
-          <td>89</td>
-          <td><input value="87" size="4" style="text-align: center" /></td>
-          <td>90</td>
-        </tr>
-        <tr>
-          <td>Darth</td>
-          <td>98</td>
-          <td>89</td>
-          <td>87</td>
-          <td>90</td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- row 3: filter button -->
+
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-light text-muted me-2">
+          <i class="fa fa-filter me-2"></i>Apply Filters
+        </button>
+      </div>
+    </div>
+
+    <!-- Grades table -->
+    <div class="flex-fill mt-4">
+      <table
+        class="table table-bordered table-hover table-striped wd-grade-table"
+      >
+        <thead class="thead-light">
+          <tr>
+            <th rowspan="2" style="text-align: left">Student Name</th>
+            <th>A1</th>
+            <th>A2</th>
+            <th>A3</th>
+            <th>A4</th>
+          </tr>
+          <tr>
+            <td>Out of 100</td>
+            <td>Out of 100</td>
+            <td>Out of 100</td>
+            <td>Out of 100</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Alice Wonderland</th>
+            <td>100</td>
+            <td>88</td>
+            <td>
+              <input
+                class="form-control"
+                value="95"
+                type="number"
+                max="100"
+                min="0"
+              />
+            </td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <th scope="row">Charlie Brown</th>
+            <td>100</td>
+            <td>
+              <input
+                class="form-control"
+                value="100"
+                type="number"
+                max="100"
+                min="0"
+              />
+            </td>
+            <td>100</td>
+            <td>
+              <input
+                class="form-control"
+                value="75"
+                type="number"
+                max="100"
+                min="0"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Darth</th>
+            <td>85</td>
+
+            <td>90</td>
+            <td>80</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <th scope="row">Bob</th>
+            <td>100</td>
+            <td>
+              <input
+                class="form-control"
+                value="100"
+                type="number"
+                max="100"
+                min="0"
+              />
+            </td>
+            <td>100</td>
+            <td>
+              <input
+                class="form-control"
+                value="100"
+                type="number"
+                max="100"
+                min="0"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- end of grades -->
+    </div>
   </body>
 </html>

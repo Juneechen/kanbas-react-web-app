@@ -18,7 +18,7 @@
 }
 /* selected li text  */
 .wd-kanbas-navigation li.wd-active a {
-  color: red;
+  color: #c70000;
 }
 /* anchor text  */
 .wd-kanbas-navigation a {
@@ -27,7 +27,7 @@
 }
 /* icons */
 .wd-kanbas-navigation a i {
-  color: red;
+  color: #c70000;
   font-size: 2em; /* size of the icon */
   margin-bottom: 5px; /* space between icon and text */
 }

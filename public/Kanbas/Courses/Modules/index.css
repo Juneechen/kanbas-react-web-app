@@ -1,36 +1,66 @@
-.wd-modules,
-.wd-modules * {
+.wd-modules {
   border-radius: 0%;
-  border: none;
+  /* border: none;
   margin: 0px;
-  padding: 0px;
+  padding: 0px; */
 }
 
 .wd-modules {
-  margin: 5px;
+  margin: 20px 5px;
 }
 
-.wd-modules > li {
+.wd-modules i {
+  margin: 12px;
+}
+
+/* module items */
+.wd-modules .d-flex .flex-fill {
+  margin-left: 8px;
+}
+
+.wd-modules .rounded-pill {
+  border: 1px gray solid;
+}
+
+/* Override hyperlink styles */
+.wd-modules a {
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Make the text bold */
+  color: rgb(79, 78, 78); /* Use the default text color */
+}
+
+/* vertical align middle, left margin 4px */
+.wd-modules-subitem {
+  vertical-align: middle;
+  margin-left: 24px;
+}
+
+/* .wd-modules > li {
   background-color: lightgray;
   border: 1px solid gray !important;
   border-left: none !important;
-}
+} */
 
-/* the list title  */
+/* the list title
 .wd-modules > li > div {
   padding: 6px;
   border-left: 1px solid gray !important;
 
-  font-weight: bold; /* Set the font weight to bold */
-}
+  font-weight: bold;
+} */
 
-/* the list items */
+/* the list items 
 .wd-modules > li > ul > li {
   padding: 5px;
   border-top: 1px solid gray !important;
   border-left: 2px solid green;
+} */
+
+.wd-modules .list-group-item {
+  border-radius: 0%;
+  border-left: 3px solid green;
 }
 
-.wd-modules > li {
+/* .wd-modules > li {
   margin-bottom: 20px;
-}
+} */

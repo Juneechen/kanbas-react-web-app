@@ -19,7 +19,24 @@
 .wd-navigation li.wd-active a {
   color: black;
 }
-.wd-navigation a {
-  color: red;
+
+/* .wd-navigation a {
+  color: #c70000;
   text-decoration: none;
+} */
+
+a {
+  color: #c70000; /* override color of hyperlinks */
+  text-decoration: none; /* remove underline from hyperlinks */
 }
+
+/* text-transform: uppercase; /* Convert text to uppercase */
+/* font-weight: bold; Set the font weight to bold */
+
+.breadcrumb-item.active::before {
+  content: " > "; /* override separator; was '/' */
+}
+
+/* .breadcrumb-item a {
+  color: #c70000; 
+} */

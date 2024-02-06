@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
-    <!--<link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css" /> -->
+    <!-- <link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css" /> -->
     <link rel="stylesheet" href="/Kanbas/Courses/Grades/index.css" />
   </head>
   <body>
@@ -67,7 +67,7 @@
           </ul>
         </div>
 
-        <!-- Right: Course Nav + Component -->
+        <!-- Right: Content Page -->
         <div class="flex-fill container-fluid">
           <!-- Top: Breadcrumb -->
           <nav class="mt-4 container-fluid" aria-label="breadcrumb">
@@ -77,23 +77,21 @@
                   >CS5610.11744.202310</a
                 >
               </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                Modules
-              </li>
+              <li class="breadcrumb-item active" aria-current="page">xxx</li>
             </ol>
           </nav>
 
           <hr />
 
-          <!-- Bottom 2 Cols -->
+          <!-- Bottom 2 Cols: Course Navigation + Grade Edit -->
           <div class="d-flex">
-            <!-- Col 1: Course Nav -->
+            <!-- Col 1: Nav -->
             <div class="d-none d-xl-block">
               <ul class="wd-navigation">
-                <li>
+                <li class="wd-active">
                   <a href="/Kanbas/Courses/Home/screen.html">Home</a>
                 </li>
-                <li class="wd-active">
+                <li>
                   <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
                 </li>
                 <li><a href="http://piazza.com">Piazza</a></li>
@@ -111,47 +109,55 @@
               </ul>
             </div>
 
-            <!-- Col 2: Component Content -->
+            <!-- Col 2: Grades -->
             <div class="flex-fill container-fluid ms-4">
-              <!-- row 1: buttons -->
+              <!-- row 1: Buttons on the top of this column -->
               <div class="d-flex">
-                <div>
-                  <!-- empty placeholder -->
-                </div>
-                <div class="flex-fill float-end">
-                  <span class="float-end"
-                    ><button class="btn btn-light text-muted me-2">
-                      <i class="fas fa-file-import me-2"></i>Import
-                    </button>
+                <!-- buttons group -->
+                <div class="flex-fill">
+                  <div class="d-flex float-end">
+                    <div>
+                      <button class="btn btn-light text-muted me-2">
+                        <i class="fas fa-file-import me-2"></i>Import
+                      </button>
+                    </div>
                     <!-- Export dropdown button  -->
                     <!-- <button class="btn btn-light me-2">
                         <i class="fa fa-sign-out me-2"></i>Export
                       </button> -->
-                    <select class="form-select btn btn-light text-muted me-2">
-                      <option>
-                        <i class="fas fa-file-export me-2"></i>Export
-                      </option>
-                      <option>Export Current Gradebook View</option>
-                      <option>Export Entire Gradebook</option>
-                    </select>
-                    <!-- End of Export dropdown button  -->
-                    <button class="btn btn-light me-2">
-                      <i class="fas fa-cog"></i></button
-                  ></span>
+                    <div>
+                      <select class="form-select btn btn-light text-muted me-2">
+                        <option>
+                          <i class="fas fa-file-export me-2"></i>Export
+                        </option>
+                        <option>Export Current Gradebook View</option>
+                        <option>Export Entire Gradebook</option>
+                      </select>
+                    </div>
+                    <div>
+                      <!-- End of Export dropdown button  -->
+                      <button class="btn btn-light me-2">
+                        <i class="fas fa-cog"></i>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <!-- row 2: dropdowns -->
               <div class="row mt-2">
                 <div class="col font-weight-bold">
-                  <label>blah</label><br />
-                  <input class="form-control mt-2" placeholder="placeholder" />
-                </div>
-                <div class="col font-weight-bold">
-                  <label>blah</label><br />
+                  <label>Student Names</label><br />
                   <input
                     class="form-control mt-2"
-                    placeholder="placeholder"
+                    placeholder="Search Students"
+                  />
+                </div>
+                <div class="col font-weight-bold">
+                  <label>Assignment Names</label><br />
+                  <input
+                    class="form-control mt-2"
+                    placeholder="Search Assignments"
                   /><br />
                 </div>
               </div>
@@ -161,18 +167,17 @@
               <div class="row">
                 <div class="col">
                   <button class="btn btn-light text-muted me-2">
-                    <i class="fa fa-filter me-2"></i>button
+                    <i class="fa fa-filter me-2"></i>Apply Filters
                   </button>
                 </div>
               </div>
 
-              <!-- Actual Content -->
-              <div class="flex-fill mt-4">Actual Content</div>
+              <!-- content -->
+              <div class="flex-fill mt-4"></div>
+              <!-- end of content -->
             </div>
           </div>
-          <!-- End of Col 2: Component Content  -->
         </div>
-        <!-- End of Right: Course Nav + Component -->
       </div>
     </div>
   </body>

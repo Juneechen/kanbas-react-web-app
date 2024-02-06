@@ -1,20 +1,29 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
+    <!-- <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="/Kanbas/styles.css" />
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
-    <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" /> 
+    <link rel="stylesheet" href="/Kanbas/Courses/Modules/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/Home/index.css" />
+    <!-- <link rel="stylesheet" href="/Kanbas/Courses/Assignments/index.css" /> -->
+    <!-- <link rel="stylesheet" href="/Kanbas/Courses/Grades/index.css" /> -->
   </head>
   <body>
-
-    <!-- refactor the above code using flex -->
-    <!-- Implement links to Kanbas and Course Navigation -->
-    <div class="d-flex">
-      <div class="d-none d-md-block">
-        <!-- Col 1: Kanbas Navigation Here -->
-        <ul class="wd-kanbas-navigation">
+    <!-- Refactored using Bootstrap grid system -->
+    <div>
+      <div class="d-flex">
+        <!-- Left: Kanbas Navigation -->
+        <div class="d-none d-md-block">
+          <ul class="wd-kanbas-navigation">
             <li><a href="http://northeastern.edu">N</a></li>
             <li>
               <a href="/Kanbas/Account/Profile/screen.html">
@@ -22,9 +31,9 @@
                 Account</a
               >
             </li>
-            <li >
+            <li>
               <a href="/Kanbas/Dashboard/screen.html">
-                <i class="fa fa-tachometer"></i> Dashboard</a
+                <i class="fas fa-tachometer-alt"></i> Dashboard</a
               >
             </li>
             <li class="wd-active">
@@ -33,151 +42,394 @@
               >
             </li>
             <li>
-              <a href="#"><i class="fa fa-calendar"></i> Calendar</a>
+              <a href="#"><i class="far fa-calendar-alt"></i> Calendar</a>
             </li>
             <li>
-              <a href="#"><i class="fa fa-inbox"></i></br> Inbox</a>
+              <a href="#"
+                ><i class="fa fa-inbox"></i><br />
+                Inbox</a
+              >
             </li>
             <li>
-              <a href="#"><i class="fa fa-clock-o"></i>History</a>
+              <a href="#"><i class="far fa-clock"></i>History</a>
             </li>
             <li>
               <a href="#"><i class="fa fa-laptop"></i> Studio</a>
             </li>
             <li>
-              <a href="#"><i class="fa fa-sign-out"></i> Commons</a>
+              <a href="#"><i class="fas fa-sign-out-alt"></i> Commons</a>
             </li>
             <li>
-              <a href="#"><i class="fa fa-question-circle"></i></br> Help</a>
-            </li>
-        </ul>
-      </div>
-      <!-- Col 2: Course Navigation -->
-      <div class="d-none d-md-block">
-        <ul class="wd-navigation">
-          <li class="wd-active">
-            <a href="/Kanbas/Courses/Home/screen.html">Home</a>
-          </li>
-          <li>
-            <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
-          </li>
-          <li><a href="http://piazza.com">Piazza</a></li>
-          <li><a href="#">Zoom</a></li>
-          <li>
-            <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
-          </li>
-          <li><a href="#">Quizzes</a></li>
-          <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
-          <li><a href="#">People</a></li>
-        </ul>
-      </div>
-      <!-- Col 3: Home -->
-      <div class="flex-fill">
-          <!-- 3 buttons and a dropdown -->
-          <button>Collapse All</button>
-          <button>View Progress</button>
-          <select>
-            <option value="Publish All">Publish All</option>
-            <option value="Unpublish All">Unpublish All</option>
-          </select>
-          <button>+ Module</button>
-          <hr />
-
-          <!-- course modules -->
-          <ul class="list-group wd-modules">
-            <!-- a module (week) -->
-            <li class="list-group-item">
-              <div>
-                <i class="fa fa-ellipsis-v"></i> Week 1
-                <!-- some icons float to the right: -->
-                <span class="float-end">
-                  <i class="fa fa-check-circle text-success"></i>
-                  <i class="fa fa-plus ms-2"></i>
-                  <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-              </div>
-              <!-- a sub-module (nested lists) -->
-              <ul class="list-group">
-                <!-- an item in the nested list  -->
-                <li class="list-group-item">
-                  <i class="fa fa-ellipsis-v"></i> Learning Objectives
-                  <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i>
-                    <i class="fa fa-ellipsis-v ms-2"></i>
-                  </span>
-                </li>
-                <!-- an item in the nested list  -->
-                <li class="list-group-item">
-                  <i class="fa fa-ellipsis-v"></i> Reading
-                  <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i>
-                    <i class="fa fa-ellipsis-v ms-2"></i>
-                  </span>
-                </li>
-              </ul>
-            </li>
-
-            <!-- a module (week) -->
-            <li class="list-group-item">
-              <div>
-                <i class="fa fa-ellipsis-v"></i> Week 2
-                <span class="float-end">
-                  <i class="fa fa-check-circle text-success"></i>
-                  <i class="fa fa-plus ms-2"></i>
-                  <i class="fa fa-ellipsis-v ms-2"></i>
-                </span>
-              </div>
-              <ul class="list-group">
-                <li class="list-group-item">
-                  <i class="fa fa-ellipsis-v"></i> Learning Objectives
-                  <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i>
-                    <i class="fa fa-ellipsis-v ms-2"></i>
-                  </span>
-                </li>
-                <li class="list-group-item">
-                  <i class="fa fa-ellipsis-v"></i> Reading
-                  <span class="float-end">
-                    <i class="fa fa-check-circle text-success"></i>
-                    <i class="fa fa-ellipsis-v ms-2"></i>
-                  </span>
-                </li>
-              </ul>
+              <a href="#"
+                ><i class="fa fa-question-circle"></i><br />
+                Help</a
+              >
             </li>
           </ul>
-      </div>
-      <!-- Col 4: Course Status -->
-      <div class="flex-grow-0 me-2 d-none d-lg-block" style="width: 250px">
-        <h3>Course Status</h3>
-        <!-- buttons on top  -->
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <button>Unpublish</button>
-              </td>
-              <td>
-                <button>Published</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <!--  links -->
-        <ul>
-          <li><a href="">Import Existing Content</a></li>
-          <li><a href="">Import From Commons</a></li>
-          <li><a href="">Choose Home Page</a></li>
-          <li><a href="">New Announcement</a></li>
-          <li><a href="">New Analystics</a></li>
-        </ul>
-        <h3>Coming Up</h3>
-        <a href="">View Calander</a>
-        <ul>
-          <li><a href="">Lecture CS4550 at Sep 7 11:45am</a></li>
-          <li><a href="">Lecture CS5610 at Sep 11 6pm</a></li>
-        </ul>
+        </div>
+
+        <!-- Right: Content Page -->
+        <div class="flex-fill container-fluid">
+          <!-- Top: Breadcrumb -->
+          <nav class="mt-4 container-fluid" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="/Kanbas/Courses/Home/screen.html"
+                  >CS5610.11744.202310</a
+                >
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Home</li>
+            </ol>
+          </nav>
+
+          <hr />
+
+          <!-- Bottom 2 Cols: Course Navigation + (Modules + Status) -->
+          <div class="d-flex">
+            <!-- Col 1: Nav -->
+            <div class="d-none d-lg-block">
+              <ul class="wd-navigation">
+                <li class="wd-active">
+                  <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                </li>
+                <li>
+                  <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                </li>
+                <li><a href="http://piazza.com">Piazza</a></li>
+                <li><a href="#">Zoom</a></li>
+                <li>
+                  <a href="/Kanbas/Courses/Assignments/screen.html"
+                    >Assignments</a
+                  >
+                </li>
+                <li><a href="#">Quizzes</a></li>
+                <li>
+                  <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
+                </li>
+                <li><a href="#">People</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 2: (left: Modules + right: Status)  -->
+            <div class="flex-fill container-fluid ms-4">
+              <div class="row">
+                <!-- left: Modules -->
+                <div class="col-9">
+                  <!-- row 1: Buttons on the top of this column -->
+                  <div class="d-flex">
+                    <!-- placeholder -->
+                    <div class="flex-fill"></div>
+                    <!-- buttons -->
+                    <span class="float-end"
+                      ><button class="btn btn-light">Collapse All</button
+                      ><button class="btn btn-light">View Progress</button
+                      ><button class="btn btn-light">
+                        <div class="d-flex align-items-center">
+                          <i class="fa fa-check-circle text-success me-2"></i>
+                          <select class="form-select">
+                            <option>Publish All</option>
+                          </select>
+                        </div></button
+                      ><button class="btn btn-danger">+ Module</button
+                      ><button class="btn btn-light">
+                        <i class="fa fa-ellipsis-v"></i></button
+                    ></span>
+                  </div>
+                  <hr />
+
+                  <!-- module group -->
+                  <div class="flex-fill mt-4">
+                    <div class="card wd-modules">
+                      <div class="card-header">
+                        <i class="fa fa-ellipsis-v"></i> Week 1<span
+                          class="float-end"
+                          ><i class="fa fa-check-circle text-success"></i>
+                          <i class="fa fa-plus"></i>
+                          <i class="fa fa-ellipsis-v"></i>
+                        </span>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <!-- item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <span class="d-flex flex-fill align-items-center"
+                              >LEARNING OBJECTIVES</span
+                            >
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+
+                        <!-- item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <span class="d-flex flex-fill align-items-center"
+                              >READING</span
+                            >
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- end of module group -->
+
+                  <!-- module group -->
+                  <div class="flex-fill mt-4">
+                    <div class="card wd-modules">
+                      <div class="card-header">
+                        <i class="fa fa-ellipsis-v"></i> Week 2<span
+                          class="float-end"
+                          ><i class="fa fa-check-circle text-success"></i>
+                          <i class="fa fa-plus"></i>
+                          <i class="fa fa-ellipsis-v"></i>
+                        </span>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <!-- item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <span class="d-flex flex-fill align-items-center"
+                              >LEARNING OBJECTIVES</span
+                            >
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+
+                        <!-- item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <span class="d-flex flex-fill align-items-center"
+                              >READING</span
+                            >
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of item  -->
+                        <!-- sub-item  -->
+                        <li class="list-group-item">
+                          <div class="d-flex">
+                            <i class="fa fa-ellipsis-v"></i>
+
+                            <div
+                              class="d-flex flex-fill ps-4 align-items-center"
+                            >
+                              sub-item
+                            </div>
+
+                            <span class="float-end">
+                              <i class="fa fa-check-circle text-success"></i>
+                              <i class="fa fa-ellipsis-v"></i>
+                            </span>
+                          </div>
+                        </li>
+                        <!-- end of sub-item  -->
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- end of module group -->
+                </div>
+
+                <!-- right: Status -->
+                <div class="d-none d-xl-block col-3">
+                  <h5>Course Status</h5>
+                  <hr />
+                  <!-- buttons on top  -->
+                  <div class="d-flex mb-4">
+                    <button class="flex-fill btn btn-light">
+                      <i class="fas fa-ban me-2"></i>Unpublish
+                    </button>
+
+                    <button class="flex-fill btn btn-success">Published</button>
+                  </div>
+                  <!--  links -->
+                  <button class="btn btn-light btn-block" href="">
+                    Import Existing Content
+                  </button>
+                  <button class="btn btn-light" href="">
+                    Import From Commons
+                  </button>
+                  <button class="btn btn-light" href="">
+                    Choose Home Page
+                  </button>
+                  <button class="btn btn-light" href="">
+                    New Announcement
+                  </button>
+                  <button class="btn btn-light" href="">New Analystics</button>
+
+                  <h5>To Do</h5>
+                  <hr />
+                  <ul>
+                    <li class="list-group-item"><a href="#">Task 1</a></li>
+                    <li class="list-group-item"><a href="#">Task 2</a></li>
+                  </ul>
+
+                  <h5>Coming Up</h5>
+                  <hr />
+                  <!-- <a href="">View Calander</a> -->
+                  <ul>
+                    <li class="list-group-item">
+                      <a href="#">Lecture CS4550 at Sep 7 11:45am</a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="#">Lecture CS5610 at Sep 11 6pm</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- End of Col 2: (left: Modules + right: Status)  -->
+          </div>
+        </div>
       </div>
     </div>
-
   </body>
 </html>

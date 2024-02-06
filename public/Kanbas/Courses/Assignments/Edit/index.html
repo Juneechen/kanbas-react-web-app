@@ -1,173 +1,154 @@
 <html>
   <head></head>
   <body>
-    <!-- Dropdown -->
-    <select>
-      <option value="Speed Grader">Speed Grader</option>
-    </select>
+    <!-- row 1: buttons -->
+    <div class="d-flex">
+      <div>
+        <!-- empty placeholder -->
+      </div>
+      <div class="flex-fill">
+        <span class="float-end"
+          ><button class="btn btn-light me-2">
+            <i class="fa fa-check-circle text-success me-2"></i
+            >Published</button
+          ><button class="btn btn-light">
+            <i class="fa fa-ellipsis-v ms-2"></i></button
+        ></span>
+      </div>
+    </div>
+
     <hr />
 
-    <!-- Assignment Edit Form -->
-    <form action="/Kanbas/Courses/Assignments/screen.html">
+    <!-- row 2: Text Input -->
+    <div class="flex-fill">
       <!-- Input text fields -->
-      <label
-        ><h3>Assignment Name</h3>
-        <input id="assignment-name" value="A1 - ENV + HTML" /> </label
-      ><br /><br />
-
-      <textarea id="assignment-description" cols="30" rows="10">
-        This is the assignment-description.
-    </textarea
-      ><br /><br />
-
-      <!-- Dropdowns  -->
-      <label>Points <input id="assignment-points" value="100" /> </label
-      ><br /><br />
-
-      <label
-        >Assignment Group<br />
-        <select id="assignment-group">
-          <option value="Assignment">Assignment</option>
-          <option value="Quiz">Quiz</option>
-          <option value="Exam">Exam</option>
-          <option value="Project">Project</option>
-        </select> </label
-      ><br /><br />
-
-      <label
-        >Display Grade as<br />
-        <select id="assignment-grade-display">
-          <option value="Percentage">Percentage</option>
-          <option value="Points">Points</option>
-        </select> </label
-      ><br /><br />
-
-      <label
-        >Submission Type<br />
-        <select id="assignment-submission-type">
-          <option value="Online">Online</option>
-          <option value="External Tool">External Tool</option>
-        </select> </label
-      ><br /><br />
-
-      <!-- checkboxes: online entry options -->
-      <label>Online Entry Options</label><br />
-      <label
-        ><input
-          type="checkbox"
-          value="Text Entry"
-          name="check-entry-option"
-          id="chkbox-text-entry"
-        />
-        Text Entry</label
+      <label for="wd-assignment-name">Assignment Name<br /></label>
+      <input
+        class="form-control mt-1"
+        value="A1"
+        id="wd-assignment-name"
+      /><br />
+      <textarea class="form-control">This assignment blah blah ... </textarea
       ><br />
-      <label
-        ><input
-          type="checkbox"
-          value="Website URL"
-          name="check-entry-option"
-          id="chkbox-web-url"
-        />
-        Website URL</label
-      ><br />
-      <label
-        ><input
-          type="checkbox"
-          value="Media Recordings"
-          name="check-entry-option"
-          id="chkbox-media-recordings"
-        />
-        Media Recordings</label
-      ><br />
-      <label
-        ><input
-          type="checkbox"
-          value="Student Annotation"
-          name="check-entry-option"
-          id="chkbox-student-annotation"
-        />
-        Student Annotation</label
-      ><br />
-      <label
-        ><input
-          type="checkbox"
-          value="File Uploads"
-          name="check-entry-option"
-          id="chkbox-file-uploads"
-        />
-        File Uploads</label
-      ><br /><br />
+    </div>
 
-      <!-- checkboxes: Group Assignments, and Peer Reviews. -->
-      <label>Group Assignments</label><br />
-      <label
-        ><input
-          type="checkbox"
-          value="Option 1"
-          name="check-group-assignment"
-          id="chkbox-group-assignment"
-        />
-        Option 1</label
-      ><br />
-      <label
-        ><input
-          type="checkbox"
-          value="Option 2"
-          name="check-group-assignment"
-          id="chkbox-group-assignment"
-        />
-        Option 2</label
-      ><br /><br />
+    <!-- row 3: Actual Content -->
+    <div class="mt-4 container">
+      <!-- a row -->
+      <div class="row">
+        <div class="col-3 wd-edit-label wd-edit-label">Points</div>
+        <div class="col-9">
+          <input
+            class="form-control"
+            type="number"
+            value="100"
+            min="0"
+            max="100"
+          /><br />
+        </div>
+      </div>
+      <!-- end of a row -->
+      <!-- a row -->
+      <div class="row">
+        <div class="col-3 wd-edit-label">Assignment Group</div>
+        <div class="col-9">
+          <select class="form-select" id="assignment-group">
+            <option value="Assignment">Assignment</option>
+            <option value="Quiz">Quiz</option>
+            <option value="Exam">Exam</option>
+            <option value="Project">Project</option></select
+          ><br />
+        </div>
+      </div>
+      <!-- end of a row -->
+      <!-- a row -->
+      <div class="row">
+        <div class="col-3 wd-edit-label">Display Grade as</div>
+        <div class="col-9">
+          <select class="form-select" id="grade-display-as">
+            <option value="Percentage">Percentage</option></select
+          ><br />
+        </div>
+      </div>
+      <!-- end of a row -->
+      <!-- a row -->
+      <div class="row">
+        <div class="col-3 wd-edit-label">Submission Type</div>
+        <div class="col-9">
+          <select class="form-select" id="assignment-submission-type">
+            <option value="Online">Online</option>
+            <option value="External Tool">External Tool</option></select
+          ><br />
+        </div>
+      </div>
+      <!-- end of a row -->
+      <!-- a row -->
+      <div class="row">
+        <div class="col-3 wd-edit-label">Online Entry Options</div>
+        <div class="col-9">
+          <input type="checkbox" name="wd-entry-options" id="wd-text-entry" />
+          <label for="wd-text-entry">Text Entry</label><br />
+          <input type="checkbox" name="wd-entry-options" id="wd-website-url" />
+          <label for="wd-website-url">Website URL</label><br />
+          <input
+            type="checkbox"
+            name="wd-entry-options"
+            id="wd-media-recordings"
+          />
+          <label for="wd-media-recordings">Media Recordings</label><br />
+          <input
+            type="checkbox"
+            name="wd-entry-options"
+            id="wd-student-annotations"
+          />
+          <label for="wd-student-annotations">Student Annotations</label><br />
+          <input type="checkbox" name="wd-entry-options" id="wd-file-uploads" />
+          <label for="wd-file-uploads">File Uploads</label><br /><br />
+        </div>
+      </div>
+      <!-- end of a row -->
+      <!-- a row -->
+      <div class="row">
+        <div class="col-3 wd-edit-label">Assign</div>
+        <div class="col-9">
+          <div class="border rounded p-3">
+            Due<br />
+            <input
+              class="form-control"
+              name="wd-due-date"
+              type="date"
+              value="2021-01-01"
+            /><br />
+            Available From<br />
+            <input
+              class="form-control"
+              name="wd-available-from"
+              type="date"
+              value="2021-01-01"
+            /><br />
+            Until<br />
+            <input
+              class="form-control"
+              name="wd-available-until"
+              type="date"
+              value="2021-01-01"
+            /><br />
+          </div>
+          <br />
+        </div>
+      </div>
+      <!-- end of a row -->
+    </div>
 
-      <label>Peer Reviews</label><br />
-      <label
-        ><input
-          type="checkbox"
-          value="Option 1"
-          name="check-peer-review"
-          id="chkbox-peer-review"
-        />
-        Option 1</label
-      ><br />
-      <label
-        ><input
-          type="checkbox"
-          value="Option 1"
-          name="check-peer-review"
-          id="chkbox-peer-review"
-        />
-        Option 1</label
-      ><br /><br />
-
-      <!-- input text  -->
-      Assign <br />
-      <label
-        >Assign to <br /><input
-          id="text-fields-assign-to"
-          value="Everyone"
-          name="text-fields-assign-to" /></label
-      ><br /><br />
-
-      <!-- Dates  -->
-      <label
-        >Due Date<br />
-        <input id="date-due" type="date" value="2021-01-01" />
-      </label>
-      <br /><br />
-      <label
-        >Available From<br />
-        <input id="date-available-from" type="date" value="2021-01-01" />
-      </label>
-      <br /><br />
-      <label
-        >Until<br />
-        <input id="date-until" type="date" value="2021-01-01" />
-      </label>
-      <br /><br />
-
-      <!-- form controls -->
-      <button>Cancel</button>
-      <button>Save</button>
-    </form>
+    <hr />
+    <!-- row 4: buttons -->
+    <div class="d-flex justify-content-end">
+      <a href="/Kanbas/Courses/Assignments/screen.html"
+        ><button class="btn btn-light me-3">Cancel</button></a
+      >
+      <button class="btn btn-danger">Save</button>
+    </div>
+    <!-- end of buttons -->
+    <hr />
   </body>
 </html>
