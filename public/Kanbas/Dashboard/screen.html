@@ -1,260 +1,269 @@
 <html>
   <head>
     <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
-    <!-- <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.css" /> -->
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
+    <!-- <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="/Kanbas/styles.css" />
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
   </head>
   <body>
-    <table>
-      <tbody>
-        <tr valign="TOP">
-          <!-- Col 1: Kanbas Navigation -->
-          <td valign="top" style="width: 80px">
-            <ul class="wd-kanbas-navigation">
-              <li><a href="http://northeastern.edu">N</a></li>
-              <li>
-                <a href="/Kanbas/Account/Profile/screen.html">
-                  <!-- <i class="fa fa-user" id="wd-account-icon"></i> -->
-                  <i class="fa fa-user" id="wd-account-icon"></i>
-                  Account</a
-                >
-              </li>
-              <li class="wd-active">
-                <a href="/Kanbas/Dashboard/screen.html">
-                  <i class="fa fa-tachometer"></i> Dashboard</a
-                >
-              </li>
-              <li>
-                <a href="/Kanbas/Courses/Home/screen.html"
-                  ><i class="fa fa-book"></i>Courses</a
-                >
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-calendar"></i> Calendar</a>
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa fa-inbox"></i><br />
-                  Inbox</a
-                >
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-clock-o"></i>History</a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-laptop"></i>Studio</a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-sign-out"></i>Commons</a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-question-circle"></i><br />Help</a>
-              </li>
-            </ul>
-          </td>
+    <!-- Refactored using Bootstrap grid system -->
+    <div>
+      <div class="d-flex">
+        <!-- Left: Kanbas Navigation -->
+        <div class="d-none d-md-block">
+          <ul class="wd-kanbas-navigation">
+            <li><a href="http://northeastern.edu">N</a></li>
+            <li>
+              <a href="/Kanbas/Account/Profile/screen.html">
+                <i class="fa fa-user" id="wd-account-icon"></i>
+                Account</a
+              >
+            </li>
+            <li>
+              <a href="/Kanbas/Dashboard/screen.html">
+                <i class="fas fa-tachometer-alt"></i> Dashboard</a
+              >
+            </li>
+            <li class="wd-active">
+              <a href="/Kanbas/Courses/Home/screen.html"
+                ><i class="fa fa-book"></i>Courses</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="far fa-calendar-alt"></i> Calendar</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-inbox"></i><br />
+                Inbox</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="far fa-clock"></i>History</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-laptop"></i> Studio</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-sign-out-alt"></i> Commons</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-question-circle"></i><br />
+                Help</a
+              >
+            </li>
+          </ul>
+        </div>
 
-          <!-- Col 2: Dashboard  -->
-          <td>
-            <div class="p-4">
-              <!-- Dashboard Title -->
-              <h1>Dashboard</h1>
-              <hr />
+        <!-- Right: Content Page -->
+        <div class="flex-fill container-fluid">
+          <!-- Course Cards-->
+          <div class="p-4 ms-2">
+            <!-- Dashboard Title -->
+            <h1>Dashboard</h1>
+            <hr />
 
-              <!-- Published Courses -->
-              <h2>Published Courses (7)</h2>
-              <hr />
+            <!-- Published Courses -->
+            <h2>Published Courses (7)</h2>
+            <hr />
 
-              <!-- Single Row all cards -->
-              <div class="row">
-                <!-- row-cols-1 sets the number of col to 1 for xs screen size -->
-                <!-- row-cols-md-5 sets the number of col to 5 for md screen size -->
-                <!-- g-4 sets the gap between the col to 4 units (16px)  -->
-                <div class="row row-cols-1 row-cols-md-5 g-4">
-                  <!-- Course 1 -->
-                  <!-- The widths of the courses are set to 300px  -->
-                  <div class="col" style="width: 300px">
-                    <div class="card">
-                      <img
-                        src="/images/husky.jpg"
-                        class="card-img-top"
-                        style="max-height: 150px"
-                      />
-                      <div class="card-body">
-                        <a
-                          class="card-title"
-                          href="/Kanbas/Courses/Home/screen.html"
-                          style="
-                            text-decoration: none;
-                            color: navy;
-                            font-weight: bold;
-                          "
-                        >
-                          CS1234 React JS</a
-                        >
-                        <p class="card-text">Full Stack software developer</p>
-                        <a html="#" class="btn btn-primary"> Go </a>
-                      </div>
+            <!-- Single Row all cards -->
+            <div class="row">
+              <!-- row-cols-1 sets the number of col to 1 for xs screen size -->
+              <!-- row-cols-md-5 sets the number of col to 5 for md screen size -->
+              <!-- g-4 sets the gap between the col to 4 units (16px)  -->
+              <div class="row row-cols-1 row-cols-md-5 g-4">
+                <!-- Course 1 -->
+                <!-- The widths of the courses are set to 300px  -->
+                <div class="col" style="width: 300px">
+                  <div class="card">
+                    <img
+                      src="/images/husky.jpg"
+                      class="card-img-top"
+                      style="max-height: 150px"
+                    />
+                    <div class="card-body">
+                      <a
+                        class="card-title"
+                        href="/Kanbas/Courses/Home/screen.html"
+                        style="
+                          text-decoration: none;
+                          color: navy;
+                          font-weight: bold;
+                        "
+                      >
+                        CS1234 React JS</a
+                      >
+                      <p class="card-text">Full Stack software developer</p>
+                      <a html="#" class="btn btn-primary"> Go </a>
                     </div>
                   </div>
-                  <!-- Course 2 -->
-                  <div class="col" style="width: 300px">
-                    <div class="card">
-                      <img
-                        src="/images/husky.jpg"
-                        class="card-img-top"
-                        style="max-height: 150px"
-                      />
-                      <div class="card-body">
-                        <a
-                          class="card-title"
-                          href="/Kanbas/Courses/Home/screen.html"
-                          style="
-                            text-decoration: none;
-                            color: navy;
-                            font-weight: bold;
-                          "
-                        >
-                          CS5002 Math</a
-                        >
-                        <p class="card-text">Full Stack software developer</p>
-                        <a html="#" class="btn btn-primary"> Go </a>
-                      </div>
+                </div>
+                <!-- Course 2 -->
+                <div class="col" style="width: 300px">
+                  <div class="card">
+                    <img
+                      src="/images/husky.jpg"
+                      class="card-img-top"
+                      style="max-height: 150px"
+                    />
+                    <div class="card-body">
+                      <a
+                        class="card-title"
+                        href="/Kanbas/Courses/Home/screen.html"
+                        style="
+                          text-decoration: none;
+                          color: navy;
+                          font-weight: bold;
+                        "
+                      >
+                        CS5002 Math</a
+                      >
+                      <p class="card-text">Full Stack software developer</p>
+                      <a html="#" class="btn btn-primary"> Go </a>
                     </div>
                   </div>
-                  <!-- Course 3 -->
-                  <div class="col" style="width: 300px">
-                    <div class="card">
-                      <img
-                        src="/images/husky.jpg"
-                        class="card-img-top"
-                        style="max-height: 150px"
-                      />
-                      <div class="card-body">
-                        <a
-                          class="card-title"
-                          href="/Kanbas/Courses/Home/screen.html"
-                          style="
-                            text-decoration: none;
-                            color: navy;
-                            font-weight: bold;
-                          "
-                        >
-                          CS5004 Java OOD</a
-                        >
-                        <p class="card-text">Full Stack software developer</p>
-                        <a html="#" class="btn btn-primary"> Go </a>
-                      </div>
+                </div>
+                <!-- Course 3 -->
+                <div class="col" style="width: 300px">
+                  <div class="card">
+                    <img
+                      src="/images/husky.jpg"
+                      class="card-img-top"
+                      style="max-height: 150px"
+                    />
+                    <div class="card-body">
+                      <a
+                        class="card-title"
+                        href="/Kanbas/Courses/Home/screen.html"
+                        style="
+                          text-decoration: none;
+                          color: navy;
+                          font-weight: bold;
+                        "
+                      >
+                        CS5004 Java OOD</a
+                      >
+                      <p class="card-text">Full Stack software developer</p>
+                      <a html="#" class="btn btn-primary"> Go </a>
                     </div>
                   </div>
-                  <!-- Course 4 -->
-                  <div class="col" style="width: 300px">
-                    <div class="card">
-                      <img
-                        src="/images/husky.jpg"
-                        class="card-img-top"
-                        style="max-height: 150px"
-                      />
-                      <div class="card-body">
-                        <a
-                          class="card-title"
-                          href="/Kanbas/Courses/Home/screen.html"
-                          style="
-                            text-decoration: none;
-                            color: navy;
-                            font-weight: bold;
-                          "
-                        >
-                          CS5008 Algo</a
-                        >
-                        <p class="card-text">Full Stack software developer</p>
-                        <a html="#" class="btn btn-primary"> Go </a>
-                      </div>
+                </div>
+                <!-- Course 4 -->
+                <div class="col" style="width: 300px">
+                  <div class="card">
+                    <img
+                      src="/images/husky.jpg"
+                      class="card-img-top"
+                      style="max-height: 150px"
+                    />
+                    <div class="card-body">
+                      <a
+                        class="card-title"
+                        href="/Kanbas/Courses/Home/screen.html"
+                        style="
+                          text-decoration: none;
+                          color: navy;
+                          font-weight: bold;
+                        "
+                      >
+                        CS5008 Algo</a
+                      >
+                      <p class="card-text">Full Stack software developer</p>
+                      <a html="#" class="btn btn-primary"> Go </a>
                     </div>
                   </div>
+                </div>
 
-                  <!-- Course 5 -->
-                  <div class="col" style="width: 300px">
-                    <div class="card">
-                      <img
-                        src="/images/husky.jpg"
-                        class="card-img-top"
-                        style="max-height: 150px"
-                      />
-                      <div class="card-body">
-                        <a
-                          class="card-title"
-                          href="/Kanbas/Courses/Home/screen.html"
-                          style="
-                            text-decoration: none;
-                            color: navy;
-                            font-weight: bold;
-                          "
-                        >
-                          CS5700 Networks</a
-                        >
-                        <p class="card-text">Full Stack software developer</p>
-                        <a html="#" class="btn btn-primary"> Go </a>
-                      </div>
+                <!-- Course 5 -->
+                <div class="col" style="width: 300px">
+                  <div class="card">
+                    <img
+                      src="/images/husky.jpg"
+                      class="card-img-top"
+                      style="max-height: 150px"
+                    />
+                    <div class="card-body">
+                      <a
+                        class="card-title"
+                        href="/Kanbas/Courses/Home/screen.html"
+                        style="
+                          text-decoration: none;
+                          color: navy;
+                          font-weight: bold;
+                        "
+                      >
+                        CS5700 Networks</a
+                      >
+                      <p class="card-text">Full Stack software developer</p>
+                      <a html="#" class="btn btn-primary"> Go </a>
                     </div>
                   </div>
-                  <!-- Course 6 -->
-                  <div class="col" style="width: 300px">
-                    <div class="card">
-                      <img
-                        src="/images/husky.jpg"
-                        class="card-img-top"
-                        style="max-height: 150px"
-                      />
-                      <div class="card-body">
-                        <a
-                          class="card-title"
-                          href="/Kanbas/Courses/Home/screen.html"
-                          style="
-                            text-decoration: none;
-                            color: navy;
-                            font-weight: bold;
-                          "
-                        >
-                          CS6210 NLP</a
-                        >
-                        <p class="card-text">Full Stack software developer</p>
-                        <a html="#" class="btn btn-primary"> Go </a>
-                      </div>
+                </div>
+                <!-- Course 6 -->
+                <div class="col" style="width: 300px">
+                  <div class="card">
+                    <img
+                      src="/images/husky.jpg"
+                      class="card-img-top"
+                      style="max-height: 150px"
+                    />
+                    <div class="card-body">
+                      <a
+                        class="card-title"
+                        href="/Kanbas/Courses/Home/screen.html"
+                        style="
+                          text-decoration: none;
+                          color: navy;
+                          font-weight: bold;
+                        "
+                      >
+                        CS6210 NLP</a
+                      >
+                      <p class="card-text">Full Stack software developer</p>
+                      <a html="#" class="btn btn-primary"> Go </a>
                     </div>
                   </div>
-                  <!-- Course 7 -->
-                  <div class="col" style="width: 300px">
-                    <div class="card">
-                      <img
-                        src="/images/husky.jpg"
-                        class="card-img-top"
-                        style="max-height: 150px"
-                      />
-                      <div class="card-body">
-                        <a
-                          class="card-title"
-                          href="/Kanbas/Courses/Home/screen.html"
-                          style="
-                            text-decoration: none;
-                            color: navy;
-                            font-weight: bold;
-                          "
-                        >
-                          CS5200 DBMS</a
-                        >
-                        <p class="card-text">Full Stack software developer</p>
-                        <a html="#" class="btn btn-primary"> Go </a>
-                      </div>
+                </div>
+                <!-- Course 7 -->
+                <div class="col" style="width: 300px">
+                  <div class="card">
+                    <img
+                      src="/images/husky.jpg"
+                      class="card-img-top"
+                      style="max-height: 150px"
+                    />
+                    <div class="card-body">
+                      <a
+                        class="card-title"
+                        href="/Kanbas/Courses/Home/screen.html"
+                        style="
+                          text-decoration: none;
+                          color: navy;
+                          font-weight: bold;
+                        "
+                      >
+                        CS5200 DBMS</a
+                      >
+                      <p class="card-text">Full Stack software developer</p>
+                      <a html="#" class="btn btn-primary"> Go </a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </div>
+
+          <!-- End of Bottom: ourse Cards-->
+        </div>
+
+        <!-- End of Right: Content Page -->
+      </div>
+    </div>
   </body>
 </html>
