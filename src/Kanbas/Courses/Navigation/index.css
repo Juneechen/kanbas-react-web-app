@@ -1,0 +1,27 @@
+.wd-navigation {
+  background-color: white;
+  list-style: none; /* remove bullet points */
+  padding: 0px;
+  width: 125px;
+  margin-top: 20px;
+  /* margin-left: 20px; */
+}
+.wd-navigation li {
+  padding-left: 10px;
+  margin-bottom: 10px; /* add space between list items */
+  margin-top: 10px; /* add space between list items */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.wd-navigation li.wd-active {
+  border-left: 2px solid black;
+}
+
+nav svg {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.breadcrumb-item.active::before {
+  content: " > "; /* override separator; was '/' */
+}
