@@ -1,22 +1,36 @@
-.wd-modules {
+/* ------------------ */
+.wd-modules,
+.wd-modules * {
   border-radius: 0%;
+  border: none;
+  margin: 0px;
+  padding: 0px;
 }
 
 .wd-modules {
-  margin: 20px 5px;
+  margin: 5px;
 }
 
-.wd-modules i {
-  margin: 12px;
+.wd-modules > li {
+  background-color: rgb(243, 243, 243);
+  border: 1px solid rgb(182, 182, 182) !important;
+  border-left: none !important;
 }
 
-/* module items */
-.wd-modules .d-flex .flex-fill {
-  margin-left: 8px;
+.wd-modules > li > div {
+  padding: 15px;
+  border-left: 3px solid gray !important;
+  /* border-bottom: 1px solid gray !important; */
 }
 
-.wd-modules .rounded-pill {
-  border: 1px gray solid;
+.wd-modules > li > ul > li {
+  padding: 15px;
+  /* border-top: 1px solid gray !important; */
+  border-left: 3px solid green;
+}
+
+.wd-modules > li {
+  margin-bottom: 20px;
 }
 
 /* Override hyperlink styles */
@@ -27,13 +41,10 @@
   color: #c70000;
 }
 
-.wd-modules .list-group-item {
-  border-radius: 0%;
-  border-left: 3px solid green;
-}
-
-.wd-modules .list-group {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 6px;
+.btn {
+  text-align: center;
+  font-size: 16px;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
 }

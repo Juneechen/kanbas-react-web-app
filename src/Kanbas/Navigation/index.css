@@ -2,7 +2,7 @@
   background-color: black;
   list-style: none;
   padding: 0px;
-  padding-top: 10px;
+  padding-top: 0px;
   margin: 0px;
   width: 80px; /* width of the container */
   height: 100vh;
@@ -10,18 +10,33 @@
 /* li container */
 .wd-kanbas-navigation li {
   padding: 10px; /* space between li and border */
-  margin-bottom: 10px; /* space between li */
+  padding-top: 17px;
+  padding-bottom: 17px;
+  text-align: center;
+  margin-bottom: 0px; /* space between li */
   font-size: 0.8em;
   text-align: center;
 }
+
+.wd-kanbas-navigation li * {
+  color: rgb(240, 240, 240);
+  /* size  */
+}
+
+.wd-kanbas-navigation li svg {
+  /* size  */
+  width: 25px;
+}
+
 /* selected li bg  */
 .wd-kanbas-navigation li.wd-active {
   background-color: white;
 }
 /* selected li text  */
-.wd-kanbas-navigation li.wd-active a {
+.wd-kanbas-navigation li.wd-active * {
   color: #c70000;
 }
+
 /* anchor text  */
 .wd-kanbas-navigation a {
   color: white;
@@ -45,6 +60,9 @@
   list-style: none;
   color: #c70000;
 }
+.wd-kanbas-nav-collapse li.wd-active {
+  font-weight: bold;
+}
 
 .wd-kanbas-nav-collapse li {
   padding: 8px; /* space between li and border */
@@ -58,11 +76,6 @@
   margin-bottom: 4px; /* space between li */
   margin-right: 10pt;
   width: 16px;
-}
-
-.wd-kanbas-nav-collapse-active {
-  font-weight: bold;
-  text-decoration: underline;
 }
 
 /* styles <a> and <Link>  */

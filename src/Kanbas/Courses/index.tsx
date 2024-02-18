@@ -1,7 +1,7 @@
 import { courses } from "../../Kanbas/Database";
 import { Navigate, Route, Routes, useParams } from "react-router-dom";
-// import { HiMiniBars3 } from "react-icons/hi2";
-import CourseNavigation from "./Navigation";
+
+import { CourseNavigation, Breadcrumb, CollapseNav } from "./Navigation";
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
@@ -12,12 +12,16 @@ function Courses() {
   const { courseId } = useParams();
   const course = courses.find((course) => course._id === courseId);
   return (
-    <div>
-      <CourseNavigation courseName={course?.name} />
-      <div>
+    // <div>
+    <>
+      <CollapseNav />
+      <Breadcrumb courseName={course?.name} />
+      <div className="d-flex">
+        <CourseNavigation courseName={course?.name} />
         <div
-          className="overflow-y-scroll position-fixed bottom-0 end-0"
-          style={{ left: "260px", top: "120px" }}
+          // className="overflow-y-scroll position-fixed bottom-0 end-0"
+          // style={{ left: "220px", top: "90px" }}
+          className="flex-fill overflow-y-scroll flex-grow-1"
         >
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
@@ -33,7 +37,8 @@ function Courses() {
           </Routes>
         </div>
       </div>
-    </div>
+    </>
   );
 }
+
 export default Courses;

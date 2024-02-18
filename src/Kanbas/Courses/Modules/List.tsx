@@ -23,7 +23,7 @@ function ModuleList() {
               <FaEllipsisV className="me-2" />
               {module.name}
               <span className="float-end">
-                <FaCheckCircle className="text-success" />
+                <FaCheckCircle className="text-success ms-2" />
                 <FaPlusCircle className="ms-2" />
                 <FaEllipsisV className="ms-2" />
               </span>
@@ -31,13 +31,13 @@ function ModuleList() {
             {/* module items  */}
             {/* only display items of currently selected module */}
             {selectedModule._id === module._id && (
-              <ul className="list-group">
+              <ul className="list-group ">
                 {module.lessons?.map((lesson) => (
                   <li className="list-group-item">
                     <FaEllipsisV className="me-2" />
                     {lesson.name}
                     <span className="float-end">
-                      <FaCheckCircle className="text-success" />
+                      <FaCheckCircle className="text-success ms-2" />
                       <FaEllipsisV className="ms-2" />
                     </span>
                   </li>

@@ -1,9 +1,10 @@
 import ModuleList from "./List";
+import { FaEllipsisV, FaCheckCircle } from "react-icons/fa";
 import "./index.css";
 
 function Modules() {
   return (
-    <div>
+    <>
       {/* <!-- row 1: Buttons on the top of this column --> */}
       <div className="d-flex">
         {/* <!-- placeholder --> */}
@@ -14,7 +15,7 @@ function Modules() {
           <button className="btn btn-light">View Progress</button>
           <button className="btn btn-light">
             <div className="d-flex align-items-center">
-              <i className="fa fa-check-circle text-success me-2"></i>
+              <FaCheckCircle className="text-success me-2" />
               <select className="form-select">
                 <option>Publish All</option>
               </select>
@@ -22,13 +23,13 @@ function Modules() {
           </button>
           <button className="btn btn-danger">+ Module</button>
           <button className="btn btn-light">
-            <i className="fa fa-ellipsis-v"></i>
+            <FaEllipsisV />
           </button>
         </span>
       </div>
       <hr />
       <ModuleList />
-    </div>
+    </>
   );
 }
 
