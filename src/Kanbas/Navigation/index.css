@@ -7,6 +7,7 @@
   width: 80px; /* width of the container */
   height: 100vh;
 }
+
 /* li container */
 .wd-kanbas-navigation li {
   padding: 10px; /* space between li and border */
@@ -16,13 +17,16 @@
   margin-bottom: 0px; /* space between li */
   font-size: 0.8em;
   text-align: center;
+  color: white;
 }
 
+/* in-active li   */
 .wd-kanbas-navigation li * {
   color: rgb(240, 240, 240);
   /* size  */
 }
 
+/* icon size  */
 .wd-kanbas-navigation li svg {
   /* size  */
   width: 25px;
@@ -32,22 +36,10 @@
 .wd-kanbas-navigation li.wd-active {
   background-color: white;
 }
-/* selected li text  */
+
+/* selected li  */
 .wd-kanbas-navigation li.wd-active * {
   color: #c70000;
-}
-
-/* anchor text  */
-.wd-kanbas-navigation a {
-  color: white;
-  text-decoration: none;
-}
-
-/* icons */
-.wd-kanbas-navigation a i {
-  color: #c70000;
-  font-size: 2em; /* size of the icon */
-  margin-bottom: 5px; /* space between icon and text */
 }
 
 /* account icon */
