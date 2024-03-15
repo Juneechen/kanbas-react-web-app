@@ -1,9 +1,11 @@
-import { assignments, enrollments, grades, users } from "../../Database";
+// import { assignments, enrollments, grades, users } from "../../Database";
+import db from "../../Database";
 import { useParams } from "react-router-dom";
 import { FaFileImport, FaFileExport } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
 
 function Grades() {
+  const { assignments, enrollments, grades, users } = db;
   const { courseId } = useParams();
   const as = assignments.filter((assignment) => assignment.course === courseId);
   const es = enrollments.filter((enrollment) => enrollment.course === courseId);

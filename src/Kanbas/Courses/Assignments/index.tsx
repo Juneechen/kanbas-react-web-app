@@ -1,15 +1,33 @@
 import React from "react";
 import { FaCheckCircle, FaEllipsisV, FaPlusCircle } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
-import { assignments } from "../../Database";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { KanbasState } from "../../store";
+import {
+  addAssignment,
+  deleteAssignment,
+  updateAssignment,
+  setAssignment,
+  selectAssignment,
+  resetAssignment,
+} from "./assignmentsReducer";
 
 import "../Modules/index.css";
 
 function Assignments() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { courseId } = useParams();
+  const assignments = useSelector(
+    (state: KanbasState) => state.assignmentsReducer.assignments
+  );
   const assignmentList = assignments.filter(
     (assignment) => assignment.course === courseId
   );
+  const handleAddAssignment = () => {
+    dispatch(resetAssignment());
+    navigate(`/Kanbas/Courses/${courseId}/Assignments/A`);
+  };
 
   return (
     <>
@@ -23,7 +41,9 @@ function Assignments() {
         </div>
         <span className="float-end">
           <button className="btn btn-light me-2">+ Group</button>
-          <button className="btn btn-danger">+ Assignment</button>
+          <button onClick={handleAddAssignment} className="btn btn-danger">
+            + Assignment
+          </button>
         </span>
       </div>
       <hr />
@@ -43,6 +63,7 @@ function Assignments() {
               <li className="list-group-item">
                 <FaEllipsisV className="me-2" />
                 <Link
+                  onClick={() => dispatch(selectAssignment(assignment._id))}
                   to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
                 >
                   {assignment.title}
@@ -50,6 +71,20 @@ function Assignments() {
                 <span className="float-end">
                   <FaCheckCircle className="text-success" />
                   <FaEllipsisV className="ms-2" />
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => {
+                      // pop-up dialog with Yes/No Options
+                      const isConfirmed = window.confirm(
+                        "Are you sure you want to remove the assignment?"
+                      );
+                      if (isConfirmed) {
+                        dispatch(deleteAssignment(assignment._id));
+                      }
+                    }}
+                  >
+                    Delete
+                  </button>
                 </span>
               </li>
             ))}

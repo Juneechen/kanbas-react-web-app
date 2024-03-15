@@ -1,15 +1,41 @@
 import React from "react";
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle } from "react-icons/fa";
-import { useNavigate, useParams, Link } from "react-router-dom";
-import { assignments } from "../../../Database";
+import {
+  useNavigate,
+  useParams,
+  Link,
+  useSearchParams,
+} from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { KanbasState } from "../../../store";
+import {
+  addAssignment,
+  deleteAssignment,
+  updateAssignment,
+  setAssignment,
+  selectAssignment,
+} from "../assignmentsReducer";
+
+import db from "../../../Database";
 
 function AssignmentEditor() {
-  const { courseId } = useParams();
-  const { assignmentId } = useParams();
-  const assignment = assignments.find((a) => a._id === assignmentId);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { courseId } = useParams();
+  // const { assignmentId } = useParams();
+  const assignments = useSelector(
+    (state: KanbasState) => state.assignmentsReducer.assignments
+  );
+  const assignment = useSelector(
+    (state: KanbasState) => state.assignmentsReducer.assignment
+  );
   const handleSave = () => {
-    console.log("Actually saving assignment TBD in later assignments");
+    if (assignments.find((a) => a._id === assignment._id)) {
+      dispatch(updateAssignment(assignment));
+    } else {
+      dispatch(addAssignment({ ...assignment, course: courseId }));
+    }
+    // console.log("Actually saving assignment TBD in later assignments");
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
 
@@ -34,18 +60,38 @@ function AssignmentEditor() {
       <hr />
 
       <h5>Assignment Name</h5>
-      <input value={assignment?.title} className="form-control mb-2" />
+      <input
+        onChange={(e) => {
+          dispatch(setAssignment({ ...assignment, title: e.target.value }));
+        }}
+        value={assignment?.title}
+        className="form-control mb-2"
+      />
       <br />
-      <textarea className="form-control">This assignment ...</textarea>
+      <textarea
+        onChange={(e) => {
+          dispatch(
+            setAssignment({ ...assignment, description: e.target.value })
+          );
+        }}
+        className="form-control"
+      >
+        {assignment.description}
+      </textarea>
       <br />
       <div className="mt-4 container">
         <div className="row">
           <div className="col-3 wd-edit-label wd-edit-label">Points</div>
           <div className="col-9">
             <input
+              onChange={(e) => {
+                dispatch(
+                  setAssignment({ ...assignment, points: e.target.value })
+                );
+              }}
               className="form-control"
               type="number"
-              value="100"
+              value={assignment.points}
               min="0"
               max="100"
             />
@@ -141,28 +187,49 @@ function AssignmentEditor() {
               Due
               <br />
               <input
+                onChange={(e) => {
+                  dispatch(
+                    setAssignment({ ...assignment, dueDate: e.target.value })
+                  );
+                }}
                 className="form-control"
                 name="wd-due-date"
                 type="date"
-                value="2021-01-01"
+                value={assignment.dueDate}
               />
               <br />
               Available From
               <br />
               <input
+                onChange={(e) => {
+                  dispatch(
+                    setAssignment({
+                      ...assignment,
+                      availableFromDate: e.target.value,
+                    })
+                  );
+                }}
                 className="form-control"
                 name="wd-available-from"
                 type="date"
-                value="2021-01-01"
+                value={assignment.availableFromDate}
               />
               <br />
               Until
               <br />
               <input
+                onChange={(e) => {
+                  dispatch(
+                    setAssignment({
+                      ...assignment,
+                      availableUntilDate: e.target.value,
+                    })
+                  );
+                }}
                 className="form-control"
                 name="wd-available-until"
                 type="date"
-                value="2021-01-01"
+                value={assignment.availableUntilDate}
               />
               <br />
             </div>

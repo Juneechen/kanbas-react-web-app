@@ -23,6 +23,13 @@
   /* border-bottom: 1px solid gray !important; */
 }
 
+/* module description */
+.wd-modules > li > p {
+  padding-left: 20px;
+  border-left: 3px solid gray !important;
+  /* border-bottom: 1px solid gray !important; */
+}
+
 .wd-modules > li > ul > li {
   padding: 15px;
   /* border-top: 1px solid gray !important; */
@@ -47,4 +54,8 @@
   margin-left: 5px;
   margin-right: 5px;
   cursor: pointer;
+  border-radius: 8%;
+  border: none;
+  margin-inline: 5px;
+  padding-inline: 7px;
 }
