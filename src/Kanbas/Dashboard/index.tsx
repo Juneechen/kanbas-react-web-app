@@ -12,38 +12,41 @@ function Dashboard({
   return (
     <div className="p-4">
       <h1>Dashboard</h1> <hr />
-      <h5>Course</h5>
-      <input
-        value={course.name}
-        className="form-control"
-        onChange={(e) => setCourse({ ...course, name: e.target.value })}
-      />
-      <input
-        value={course.number}
-        className="form-control"
-        onChange={(e) => setCourse({ ...course, number: e.target.value })}
-      />
-      <input
-        value={course.startDate}
-        className="form-control"
-        type="date"
-        onChange={(e) => setCourse({ ...course, startDate: e.target.value })}
-      />
-      <input
-        value={course.endDate}
-        className="form-control"
-        type="date"
-        onChange={(e) => setCourse({ ...course, endDate: e.target.value })}
-      />
-      {/* <button onClick={addNewCourse}>Add</button> */}
-      <button
-        onClick={() => {
-          addNewCourse();
-          // console.log(JSON.stringify(courses, null, 2));
-        }}
-      >
-        Add
-      </button>
+      <div className="container-fluid mb-4">
+        <h5>Course</h5>
+        <input
+          value={course.name}
+          className="form-control mb-2"
+          onChange={(e) => setCourse({ ...course, name: e.target.value })}
+        />
+        <input
+          value={course.number}
+          className="form-control mb-2"
+          onChange={(e) => setCourse({ ...course, number: e.target.value })}
+        />
+        <input
+          value={course.startDate}
+          className="form-control mb-2"
+          type="date"
+          onChange={(e) => setCourse({ ...course, startDate: e.target.value })}
+        />
+        <input
+          value={course.endDate}
+          className="form-control mb-2"
+          type="date"
+          onChange={(e) => setCourse({ ...course, endDate: e.target.value })}
+        />
+        {/* <button onClick={addNewCourse}>Add</button> */}
+        <button
+          className="btn btn-success mb-2"
+          onClick={() => {
+            addNewCourse();
+            // console.log(JSON.stringify(courses, null, 2));
+          }}
+        >
+          Add
+        </button>
+      </div>
       <h2>Published Courses ({courses.length})</h2> <hr />
       {/* Course Cards  */}
       <div className="row">
@@ -69,8 +72,11 @@ function Dashboard({
                       fontWeight: "bold",
                     }}
                   >
-                    {course.name}{" "}
+                    {course.name}
+                    <br />
+                    <br />
                     <button
+                      className="btn btn-primary"
                       onClick={(event) => {
                         event.preventDefault();
                         setCourse(course);
@@ -79,6 +85,7 @@ function Dashboard({
                       Edit
                     </button>
                     <button
+                      className="btn btn-danger"
                       onClick={(event) => {
                         // prevent the Link's default behavior to navigate to Course Screen:
                         event.preventDefault();
@@ -88,14 +95,13 @@ function Dashboard({
                       Delete
                     </button>
                   </Link>
-                  <p className="card-text">{course.name}</p>
                   {/* Go button */}
-                  <Link
+                  {/* <Link
                     to={`/Kanbas/Courses/${course._id}/Home`}
                     className="btn btn-primary"
                   >
                     Go{" "}
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
