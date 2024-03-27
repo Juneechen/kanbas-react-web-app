@@ -17,16 +17,16 @@ import "../Modules/index.css";
 function Assignments() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { courseId } = useParams();
+  const { cid } = useParams();
   const assignments = useSelector(
     (state: KanbasState) => state.assignmentsReducer.assignments
   );
   const assignmentList = assignments.filter(
-    (assignment) => assignment.course === courseId
+    (assignment) => assignment.course === cid
   );
   const handleAddAssignment = () => {
     dispatch(resetAssignment());
-    navigate(`/Kanbas/Courses/${courseId}/Assignments/A`);
+    navigate(`/Kanbas/Courses/${cid}/Assignments/A`);
   };
 
   return (
@@ -64,7 +64,7 @@ function Assignments() {
                 <FaEllipsisV className="me-2" />
                 <Link
                   onClick={() => dispatch(selectAssignment(assignment._id))}
-                  to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                  to={`/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
                 >
                   {assignment.title}
                 </Link>

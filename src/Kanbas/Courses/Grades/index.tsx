@@ -7,8 +7,12 @@ import { FaGear } from "react-icons/fa6";
 function Grades() {
   const { assignments, enrollments, grades, users } = db;
   const { courseId } = useParams();
-  const as = assignments.filter((assignment) => assignment.course === courseId);
-  const es = enrollments.filter((enrollment) => enrollment.course === courseId);
+  const as = assignments.filter(
+    (assignment: any) => assignment.course === courseId
+  );
+  const es = enrollments.filter(
+    (enrollment: any) => enrollment.course === courseId
+  );
   return (
     <div className="container-fluid">
       {/* buttons  */}
@@ -64,23 +68,25 @@ function Grades() {
         <table className="table">
           <thead>
             <th>Student Name</th>
-            {as.map((assignment) => (
+            {as.map((assignment: any) => (
               <th>{assignment.title}</th>
             ))}
           </thead>
           <tbody>
             {/* for each student enrolled in this course:  */}
-            {es.map((enrollment) => {
-              const user = users.find((user) => user._id === enrollment.user);
+            {es.map((enrollment: any) => {
+              const user = users.find(
+                (user: any) => user._id === enrollment.user
+              );
               return (
                 <tr>
                   <td>
                     {user?.firstName} {user?.lastName}
                   </td>
                   {/* for each assignemnt in the course, find the grade for each enrolled student */}
-                  {as.map((assignment) => {
+                  {as.map((assignment: any) => {
                     const grade = grades.find(
-                      (grade) =>
+                      (grade: any) =>
                         grade.student === user?._id &&
                         grade.assignment === assignment._id
                     );

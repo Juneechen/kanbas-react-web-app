@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import db from "../../Database";
 
 const initialState = {
-  modules: db.modules,
+  modules: [] as any[], // as any[] is a type assertion
   module: { name: "New Module 123", description: "New Description" },
 };
 
@@ -10,13 +9,15 @@ const modulesSlice = createSlice({
   name: "modules",
   initialState,
   reducers: {
-    // new module is in action.payload, add new module to the beginning
-    addModule: (state, action) => {
-      state.modules = [
-        { ...action.payload, _id: new Date().getTime().toString() },
-        ...state.modules,
-      ];
+    setModules: (state, action) => {
+      state.modules = action.payload;
     },
+    // new module is in action.payload, add new module to the beginning
+    // new module already contains the _id, genrated by the server in response to the POST request
+    addModule: (state, action) => {
+      state.modules = [action.payload, ...state.modules];
+    },
+
     deleteModule: (state, action) => {
       state.modules = state.modules.filter(
         (module) => module._id !== action.payload
@@ -39,6 +40,6 @@ const modulesSlice = createSlice({
   },
 });
 
-export const { addModule, deleteModule, updateModule, setModule } =
+export const { addModule, deleteModule, updateModule, setModule, setModules } =
   modulesSlice.actions;
 export default modulesSlice.reducer;

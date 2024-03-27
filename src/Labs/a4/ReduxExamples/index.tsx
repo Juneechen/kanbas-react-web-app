@@ -3,11 +3,13 @@ import HelloRedux from "./HelloRedux";
 import CounterRedux from "./CounterRedux";
 import AddRedux from "./AddRedux";
 import TodoList from "./todos/TodoList";
+// import QuizRedux from "./QuizRedux";
 
 const ReduxExamples = () => {
   return (
     <div>
       <h2>Redux Examples</h2>
+      {/* <QuizRedux /> */}
       <TodoList />
       <AddRedux />
       <CounterRedux />

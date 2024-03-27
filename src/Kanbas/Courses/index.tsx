@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import { CourseNavigation, Breadcrumb, CollapseNav } from "./Navigation";
 import Modules from "./Modules";
@@ -7,9 +8,21 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
 import Grades from "./Grades";
 
-function Courses({ courses }: { courses: any[] }) {
-  const { courseId } = useParams();
-  const course = courses.find((course: any) => course._id === courseId);
+import * as client from "./client";
+
+function Courses() {
+  const { cid } = useParams();
+  const [course, setCourse] = useState({ name: "a course" });
+
+  const fetchCourse = async (id?: string) => {
+    const course = await client.fetchCourseById(id);
+    setCourse(course);
+  };
+
+  useEffect(() => {
+    fetchCourse(cid);
+  }, [cid]); // [cid] means that the effect will run whenever cid changes
+
   return (
     // <div>
     <>
